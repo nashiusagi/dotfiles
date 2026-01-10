@@ -110,7 +110,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'prettier/vim-prettier'
 
 " Language Server
-Plugin 'neoclide/coc.nvim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Git
 Plugin 'tpope/vim-fugitive'
