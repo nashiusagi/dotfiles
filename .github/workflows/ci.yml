@@ -24,7 +24,7 @@ jobs:
         run: pip install setuptools vim-vint
       
       - name: Run vint on vim config files
-        run: vint .vimrc .vim/
+        run: vint --error .vimrc .vim/
 
   tmux-lint-check:
     runs-on: ubuntu-24.04
