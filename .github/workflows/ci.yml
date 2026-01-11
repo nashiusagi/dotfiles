@@ -1,0 +1,26 @@
+---
+name: CI
+
+on: 
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  tmux-lint-check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install tmux
+        run: sudo apt-get update && sudo apt-get install -y tmux
+      
+      - name: Check tmux.conf syntax
+        run: |
+          # 空の設定でサーバーを起動
+          tmux -f /dev/null new-session -d -s lint_test
+          # source-fileでチェック（エラーがあれば終了コード1）
+          tmux source-file .tmux.conf
+          exit_code=$?
+          tmux kill-server 2>/dev/null
+          exit $exit_code
