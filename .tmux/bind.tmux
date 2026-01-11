@@ -15,3 +15,10 @@ unbind '%'
 bind | split-window -h
 unbind '"'
 
+## Prefixキーを Ctrl-s に変更
+### デフォルトのCtrl+bを解除
+unbind C-b
+### 新しいPrefixキーをCtrl+sに設定
+set -g prefix C-s
+### Ctrl+sを2回押すとtmux内のアプリにCtrl+sを送る
+bind C-s send-prefix
