@@ -10,6 +10,22 @@ env:
   SHELL: /bin/bash
 
 jobs:
+  vim-lint-check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      
+      - name: Install vint
+        run: pip install vim-vint
+      
+      - name: Run vint on vim config files
+        run: vint .vimrc .vim/
+
   tmux-lint-check:
     runs-on: ubuntu-24.04
     steps:
