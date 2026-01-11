@@ -6,23 +6,32 @@ on:
     branches-ignore:
       - main
 
+env:
+  SHELL: /bin/bash
+
 jobs:
   tmux-lint-check:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Install tmux
-        run: sudo apt-get update && sudo apt-get install -y tmux
+
+      - name: Install tmux and TPM
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tmux
+          tmux -V
+          # TPMをインストール
+          git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
       
       - name: Check tmux.conf syntax
         run: |
-          # ~/dotfiles へのシンボリックリンクを作成
+          # ~/dotfiles へのシンボリックリンクを作成（絶対パス）
           ln -s "$GITHUB_WORKSPACE" ~/dotfiles
-          # 空の設定でサーバーを起動
-          tmux -f /dev/null new-session -d -s lint_test
+          
+          tmux new-session -d -s lint_test
+          
           # source-fileでチェック（エラーがあれば終了コード1）
-          tmux source-file .tmux.conf
+          tmux source-file "$GITHUB_WORKSPACE/.tmux.conf"
           exit_code=$?
           tmux kill-server 2>/dev/null
           exit $exit_code
