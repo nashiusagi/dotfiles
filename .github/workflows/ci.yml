@@ -17,6 +17,8 @@ jobs:
       
       - name: Check tmux.conf syntax
         run: |
+          # ~/dotfiles へのシンボリックリンクを作成
+          ln -s "$GITHUB_WORKSPACE" ~/dotfiles
           # 空の設定でサーバーを起動
           tmux -f /dev/null new-session -d -s lint_test
           # source-fileでチェック（エラーがあれば終了コード1）
