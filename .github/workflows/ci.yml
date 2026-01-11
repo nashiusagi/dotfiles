@@ -1,0 +1,93 @@
+---
+name: CI
+
+on: 
+  push:
+    branches-ignore:
+      - main
+
+env:
+  SHELL: /bin/bash
+
+jobs:
+  vim-lint-check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      
+      - name: Install vint
+        run: pip install setuptools vim-vint
+      
+      - name: Run vint on vim config files
+        run: vint --error .vimrc .vim/
+
+  tmux-lint-check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tmux and TPM
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tmux
+          tmux -V
+          # TPMをインストール
+          git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+      
+      - name: Check tmux.conf syntax
+        run: |
+          # ~/dotfiles へのシンボリックリンクを作成（絶対パス）
+          ln -s "$GITHUB_WORKSPACE" ~/dotfiles
+          
+          tmux new-session -d -s lint_test
+          
+          # source-fileでチェック（エラーがあれば終了コード1）
+          tmux source-file "$GITHUB_WORKSPACE/.tmux.conf"
+          exit_code=$?
+          tmux kill-server 2>/dev/null
+          exit $exit_code
+
+  zsh-lint-check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install zsh
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y zsh
+          zsh --version
+
+      - name: Check zsh syntax
+        run: |
+          # 構文チェック対象のファイル
+          zsh_files=(
+            ".zshrc"
+            ".zsh/zshrc/alias.zsh"
+            ".zsh/zshrc/base.zsh"
+            ".zsh/zshrc/option.zsh"
+            ".zsh/zshrc/plugin.zsh"
+            ".p10k.zsh"
+          )
+
+          exit_code=0
+          for file in "${zsh_files[@]}"; do
+            if [[ -f "$file" ]]; then
+              echo "Checking: $file"
+              if ! zsh -n "$file"; then
+                echo "❌ Syntax error in $file"
+                exit_code=1
+              else
+                echo "✅ $file OK"
+              fi
+            else
+              echo "⚠️ File not found: $file"
+            fi
+          done
+
+          exit $exit_code
