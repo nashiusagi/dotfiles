@@ -22,3 +22,6 @@ unbind C-b
 set -g prefix C-s
 ### Ctrl+sを2回押すとtmux内のアプリにCtrl+sを送る
 bind C-s send-prefix
+
+## Vimキーバインドでペインの中身を走査する
+set-window-option -g mode-keys vi
