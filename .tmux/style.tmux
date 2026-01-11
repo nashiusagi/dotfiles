@@ -3,8 +3,8 @@ set -g pane-active-border-style fg=white,bg=cyan
 
 ## ステータスバーを設定する
 ### 左パネルを設定する
-set -g status-left-length 40
-set -g status-left "#[fg=green]Session: #S #[fg=black]#I #[fg=white]#P"
+set -g status-left-length 50
+set -g status-left "#{?client_prefix,#[fg=white]#[bg=black] PREFIX #[default],        }#[fg=green]Session: #S #[fg=black]#I #[fg=white]#P"
 
 ### 右パネルを設定する
 set -g status-right "#[fg=black][%Y-%m-%d(%a) %H:%M]"
