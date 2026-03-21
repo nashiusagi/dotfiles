@@ -18,10 +18,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'  # vim-vintがPython 3.14以降に未対応のため固定
+          python-version: '3.12'  # vim-vintはPython 3.14以降未対応のため固定
       
       - name: Install vint
-        run: pip install setuptools vim-vint
+        run: pip install "setuptools<70" vim-vint
       
       - name: Run vint on vim config files
         run: vint --error .vimrc .vim/
