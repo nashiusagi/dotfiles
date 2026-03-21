@@ -49,6 +49,9 @@ Plugin 'tpope/vim-unimpaired'
 " コメントトグル (gcc: 行, gc: ビジュアル範囲)
 Plugin 'tpope/vim-commentary'
 
+" インデントの縦線ガイド
+Plugin 'Yggdroot/indentLine'
+
 " status bar design
 "Plugin 'vim-airline/vim-airline'
 
