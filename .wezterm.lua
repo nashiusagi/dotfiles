@@ -74,5 +74,5 @@ return {
     ----------------------------------------------------
     --font = make_font(),
     font_size=13,
-    line_height=1.1,
+    line_height=1.0,
 }
