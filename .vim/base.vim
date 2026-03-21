@@ -32,6 +32,9 @@ set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
 
+" 補完メニューの最大表示件数を制限
+set pumheight=10
+
 " 検索パターンにマッチするテキストをすべて強調表示する
 set hlsearch
 
