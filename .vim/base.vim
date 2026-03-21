@@ -10,7 +10,7 @@ syn sync fromstart
 " 自動インデントを有効化
 set autoindent
 
-set nowrap
+set wrap
 " 文字コードをUTF-8に設定
 set fenc=utf-8
 
@@ -44,6 +44,18 @@ set smartcase
 
 " backspaceキー有効化
 set backspace=indent,eol,start
+
+" {}による折り畳み（.vim以外）
+function! MyFoldText()
+    return getline(v:foldstart) . ' ...'
+endfunction
+set foldtext=MyFoldText()
+
+augroup MyFolding
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=manual
+    autocmd FileType * if &ft !=# 'vim' | setlocal foldmethod=syntax foldlevel=99 | endif
+augroup END
 
 " HTMLの補完
 " https://qiita.com/Zhirou/items/f533dd40fceff6249049

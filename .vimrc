@@ -4,4 +4,6 @@ source $HOME/dotfiles/.vim/style.vim
 
 source $HOME/dotfiles/.vim/myplugin-config/nerd.vim
 source $HOME/dotfiles/.vim/myplugin-config/coc.vim
+source $HOME/dotfiles/.vim/myplugin-config/gitgutter.vim
+source $HOME/dotfiles/.vim/myplugin-config/fzf.vim
 

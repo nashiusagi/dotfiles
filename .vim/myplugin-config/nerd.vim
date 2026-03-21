@@ -1,3 +1,40 @@
+" nerdtree-git-plugin: ファイルのgit状態に応じて色を変える
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+    \ 'Modified'  : '✹',
+    \ 'Staged'    : '✚',
+    \ 'Untracked' : '✭',
+    \ 'Renamed'   : '➜',
+    \ 'Unmerged'  : '═',
+    \ 'Deleted'   : '✖',
+    \ 'Dirty'     : '✗',
+    \ 'Clean'     : '✔︎',
+    \ 'Ignored'   : '☒',
+    \ 'Unknown'   : '?',
+    \ }
+let g:NERDTreeGitStatusUseNerdFonts = 0
+let g:NERDTreeGitStatusConcealBrackets = 1
+
+" ファイル名自体をgit状態で色付け（VSCode like）
+let g:NERDTreeGitStatusWithFlags = 1
+
+" VSCodeライクな色定義
+" Modified: 黄色, Untracked/Staged: 緑, Deleted: 赤, Ignored: グレー
+function! s:NERDTreeHighlightGitStatus()
+    highlight NERDTreeGitStatusModified   guifg=#E2C08D ctermfg=221
+    highlight NERDTreeGitStatusStaged     guifg=#73C991 ctermfg=114
+    highlight NERDTreeGitStatusUntracked  guifg=#73C991 ctermfg=114
+    highlight NERDTreeGitStatusRenamed    guifg=#E2C08D ctermfg=221
+    highlight NERDTreeGitStatusUnmerged   guifg=#F44747 ctermfg=203
+    highlight NERDTreeGitStatusDeleted    guifg=#F44747 ctermfg=203
+    highlight NERDTreeGitStatusDirty      guifg=#E2C08D ctermfg=221
+    highlight NERDTreeGitStatusIgnored    guifg=#606060 ctermfg=241
+endfunction
+
+augroup NERDTreeGitHighlight
+    au!
+    autocmd VimEnter,ColorScheme * call s:NERDTreeHighlightGitStatus()
+augroup END
+
 let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
