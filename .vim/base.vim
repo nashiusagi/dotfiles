@@ -10,7 +10,7 @@ syn sync fromstart
 " 自動インデントを有効化
 set autoindent
 
-set nowrap
+set wrap
 " 文字コードをUTF-8に設定
 set fenc=utf-8
 
