@@ -46,6 +46,9 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " mapping
 Plugin 'tpope/vim-unimpaired'
 
+" コメントトグル (gcc: 行, gc: ビジュアル範囲)
+Plugin 'tpope/vim-commentary'
+
 " status bar design
 "Plugin 'vim-airline/vim-airline'
 
