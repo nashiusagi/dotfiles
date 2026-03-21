@@ -125,6 +125,10 @@ if has('nvim')
     Plugin 'vim-airline/vim-airline-themes'
 endif
 
+" fzf: ファジーファイル検索
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
+
 " html
 Plugin 'alvan/vim-closetag'
 
