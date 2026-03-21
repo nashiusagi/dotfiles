@@ -52,6 +52,9 @@ Plugin 'tpope/vim-commentary'
 " インデントの縦線ガイド
 Plugin 'Yggdroot/indentLine'
 
+" 関数・クラス一覧をサイドバー表示
+Plugin 'preservim/tagbar'
+
 " status bar design
 "Plugin 'vim-airline/vim-airline'
 
