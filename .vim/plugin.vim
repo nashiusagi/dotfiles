@@ -40,6 +40,9 @@ Plugin 'suan/vim-instant-markdown'
 " file tree viewer
 Plugin 'scrooloose/nerdtree'
 
+" NERDTree git status
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 " mapping
 Plugin 'tpope/vim-unimpaired'
 
@@ -114,6 +117,7 @@ Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Git
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 " vim-airline
 if has('nvim')
