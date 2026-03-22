@@ -15,6 +15,7 @@ source ~/.zsh/git-prompt.sh
 ## git-completionの読み込み
 fpath=(~/.zsh $fpath)
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+autoload -Uz compinit && compinit
 
 ## プロンプトのオプション表示設定
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -38,9 +39,6 @@ SAVEHIST=100000
 ## 候補を選ぶには[TAB]かctrl-N,B,F,P
 zstyle ':completion:*:default' menu select=1
 
-## 自動補完を有効にする
-autoload -Uz compinit && compinit
-
 ## tmux用
 unset TMPDIR
 TMUX_TMPDIR=/tmp
@@ -50,6 +48,10 @@ TMUX_TMPDIR=/tmp
 export PATH="$HOME/.rbenv/bin:$PATH" &&
 eval "$(rbenv init -)"
 
+## sdkman
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!$
+export SDKMAN_DIR="$HOME/.sdkman"$
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -58,4 +60,11 @@ eval "$(pyenv init --path)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 #export PATH="/usr/bin/python3:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/ryogo-ito/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 
