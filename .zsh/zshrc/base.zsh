@@ -48,11 +48,6 @@ TMUX_TMPDIR=/tmp
 export PATH="$HOME/.rbenv/bin:$PATH" &&
 eval "$(rbenv init -)"
 
-## sdkman
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!$
-export SDKMAN_DIR="$HOME/.sdkman"$
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PATH:$PYENV_ROOT/bin"

@@ -20,9 +20,9 @@ export XMODIFIERS=@im=ibus
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-export SDKMAN_CANDIDATES_DIR="$HOME/.sdkman/candidates"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/home/ryogo-ito/.sdkman"
+export SDKMAN_CANDIDATES_DIR="/home/ryogo-ito/.sdkman/candidates"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
 # pnpm
 export PNPM_HOME="/home/ryogo-ito/.local/share/pnpm"
