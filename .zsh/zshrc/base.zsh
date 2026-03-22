@@ -15,7 +15,6 @@ source ~/.zsh/git-prompt.sh
 ## git-completionの読み込み
 fpath=(~/.zsh $fpath)
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-autoload -Uz compinit && compinit
 
 ## プロンプトのオプション表示設定
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -40,7 +39,7 @@ SAVEHIST=100000
 zstyle ':completion:*:default' menu select=1
 
 ## 自動補完を有効にする
-autoload -U compinit; compinit
+autoload -Uz compinit && compinit
 
 ## tmux用
 unset TMPDIR
