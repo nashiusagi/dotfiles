@@ -5,6 +5,9 @@ setopt print_eight_bit
 setopt no_beep
 setopt nolistbeep
 
+## コマンドのタイポを修正提案する
+setopt correct
+
 ## 同時に起動したzshの間でヒストリを共有する
 setopt share_history
 
