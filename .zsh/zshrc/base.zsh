@@ -1,7 +1,7 @@
 ## vimライクな操作を有効にする
 ## 文字入力中のカーソル移動など bindkey -v
 ## プロンプト表示
-rand=`expr $RANDOM % 2`
+rand=$(( RANDOM % 2 ))
 if [ $rand -eq 0 ]; then
     piyo='🐣'
 else
