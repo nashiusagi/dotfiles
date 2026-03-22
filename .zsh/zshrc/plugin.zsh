@@ -15,7 +15,7 @@ zplug romkatv/powerlevel10k, as:theme, depth:1
 zplug zsh-users/zsh-completions
 
 # コマンドをリンクして、PATHに追加し、プラグインは読み込む
-zplug load --verbose > /dev/null
+zplug load --verbose > /dev/null 2>&1
 
 # powerline
 #if [ -f /usr/share/powerline/bindings/zsh/powerline.zsh ]; then
