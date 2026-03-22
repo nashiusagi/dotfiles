@@ -6,15 +6,16 @@
 #fi
 #
 ## zplug
-source ~/.zplug/init.zsh 
+source ~/.zplug/init.zsh
+
 ## theme
 zplug romkatv/powerlevel10k, as:theme, depth:1
 
-# コマンドをリンクして、PATHに追加し、プラグインは読み込む
-zplug load --verbose > /dev/null
-
 # 補完の強化
 zplug zsh-users/zsh-completions
+
+# コマンドをリンクして、PATHに追加し、プラグインは読み込む
+zplug load --verbose > /dev/null
 
 # powerline
 #if [ -f /usr/share/powerline/bindings/zsh/powerline.zsh ]; then
