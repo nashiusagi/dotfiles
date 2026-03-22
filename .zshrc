@@ -13,6 +13,11 @@ source "$ZSHRCDIR/base.zsh"
 source "$ZSHRCDIR/plugin.zsh"
 source "$ZSHRCDIR/option.zsh"
 
+# IME (ibus + mozc)
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/ryogo-ito/.sdkman"

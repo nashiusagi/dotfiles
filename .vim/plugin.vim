@@ -46,6 +46,15 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " mapping
 Plugin 'tpope/vim-unimpaired'
 
+" コメントトグル (gcc: 行, gc: ビジュアル範囲)
+Plugin 'tpope/vim-commentary'
+
+" インデントの縦線ガイド
+Plugin 'Yggdroot/indentLine'
+
+" 関数・クラス一覧をサイドバー表示
+Plugin 'preservim/tagbar'
+
 " status bar design
 "Plugin 'vim-airline/vim-airline'
 
