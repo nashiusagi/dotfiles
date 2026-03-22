@@ -9,9 +9,6 @@ alias ls="ls --color"
 alias ll="ls -lG"
 alias la="ls -laG"
 
-## lsの色と一致させる
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
 alias ...='cd ../..'
 
 # wezterm
@@ -19,5 +16,5 @@ alias wezterm="flatpak run org.wezfurlong.wezterm"
 
 # branch
 _br() {
-  git branch | grep "*" | awk '{print $2}'
+  git branch --show-current
 }

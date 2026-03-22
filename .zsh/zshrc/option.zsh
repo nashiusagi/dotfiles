@@ -5,11 +5,19 @@ setopt print_eight_bit
 setopt no_beep
 setopt nolistbeep
 
+## コマンドのタイポを修正提案する
+setopt correct
+
+## ヒストリファイルの設定
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+
 ## 同時に起動したzshの間でヒストリを共有する
 setopt share_history
 
-## 直前と同じコマンドの場合はヒストリに追加しない
-setopt hist_ignore_dups
+## 履歴全体から重複を除去する（連続していない重複も削除）
+setopt hist_ignore_all_dups
 
 ## ヒストリに保存するときに余分なスペースを削除する
 setopt hist_reduce_blanks
