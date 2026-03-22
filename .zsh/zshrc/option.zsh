@@ -8,6 +8,11 @@ setopt nolistbeep
 ## コマンドのタイポを修正提案する
 setopt correct
 
+## ヒストリファイルの設定
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+
 ## 同時に起動したzshの間でヒストリを共有する
 setopt share_history
 
