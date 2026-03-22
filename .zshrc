@@ -9,7 +9,7 @@ fi
 
 source "$ZSHRCDIR/env.zsh"
 source "$ZSHRCDIR/option.zsh"
+source "$ZSHRCDIR/plugin.zsh"
 source "$ZSHRCDIR/completion.zsh"
 source "$ZSHRCDIR/prompt.zsh"
 source "$ZSHRCDIR/alias.zsh"
-source "$ZSHRCDIR/plugin.zsh"
