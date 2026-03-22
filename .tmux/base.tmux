@@ -3,9 +3,8 @@
 set -g default-terminal "screen-256color"
 set -g terminal-overrides "xterm:colors=256"
 
-## デフォルトシェルをBashにする
-## 適宜
-set-option -g default-command /bin/bash
+## デフォルトシェルをzshにする
+set-option -g default-shell /bin/zsh
 
 ## クリップボードへのコピー
 bind-key -T copy-mode-vi v send-keys -X begin-selection
