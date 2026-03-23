@@ -2,7 +2,6 @@ ln -s ~/dotfiles/.vimrc ~/.vimrc
 
 source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/powerline.sh
 source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/vim_deps.sh
-source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/fzf.sh
 
 powerline
 
