@@ -54,6 +54,13 @@ return {
     ----------------------------------------------------
     -- fundamental settings
     ----------------------------------------------------
+    -- IME support
+    use_ime=true,
+    set_environment_variables={
+        XMODIFIERS='@im=ibus',
+        GTK_IM_MODULE='ibus',
+        QT_IM_MODULE='ibus',
+    },
     -- tab bar
     hide_tab_bar_if_only_one_tab=false,
     -- do not hold on exit by default
