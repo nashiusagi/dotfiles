@@ -1,0 +1,4 @@
+romkatv/powerlevel10k
+zsh-users/zsh-completions
+junegunn/fzf path:shell/completion.zsh
+junegunn/fzf path:shell/key-bindings.zsh
