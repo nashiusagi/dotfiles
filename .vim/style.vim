@@ -1,5 +1,6 @@
 " 行番号を表示
 set number
+set relativenumber
 
 " 256色
 set t_Co=256
