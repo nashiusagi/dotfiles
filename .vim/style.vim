@@ -1,5 +1,9 @@
 " 行番号を表示
 set number
+set relativenumber
+
+" 相対・絶対行番号をトグル
+nnoremap <leader>ln :set relativenumber!<CR>
 
 " 256色
 set t_Co=256
