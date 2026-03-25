@@ -12,4 +12,5 @@ cd ~/.vim/bundle/coc.nvim
 yarn install
 cd ~
 
+vim +PluginInstall +qall
 vim_deps

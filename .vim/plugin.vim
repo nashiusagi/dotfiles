@@ -23,7 +23,7 @@ autocmd FileType python setlocal completeopt-=preview
 Plugin 'tomasr/molokai'
 
 " markdown preview
-Plugin 'suan/vim-instant-markdown'
+Plugin 'iamcco/markdown-preview.nvim'
 
 " file icons
 "Plugin 'ryanoasis/vim-devicons'
