@@ -2,6 +2,10 @@
 
 set -ue
 
+function install_delta() {
+    sudo apt install -y git-delta
+}
+
 function setup_gitconfig() {
     echo "git の user 情報を設定します"
 
@@ -21,4 +25,5 @@ EOF
     echo "~/.gitconfig を作成しました"
 }
 
+install_delta
 setup_gitconfig
