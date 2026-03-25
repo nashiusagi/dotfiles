@@ -6,7 +6,7 @@ source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/git.sh
 
 powerline
 
-sudo apt install -y nodejs npm
+sudo apt install -y fd-find nodejs npm
 npm install -g yarn
 cd ~/.vim/bundle/coc.nvim
 yarn install
