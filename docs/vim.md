@@ -19,6 +19,7 @@
 | **オートセーブ** | vim-auto-save |
 | **Undoツリー可視化** | gundo.vim |
 | **クイック実行** | vim-quickrun |
+| **Markdownプレビュー** | markdown-preview.nvim（`:MarkdownPreview`、Mermaid対応） |
 
 ## キーバインド
 | キー | 機能 |
@@ -45,6 +46,6 @@
 # Vundleをインストール
 git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
 
-# プラグインをインストール
-vim +PluginInstall +qall
+# プラグインをインストール・依存関係のセットアップ
+bash scripts/install.sh
 ```
