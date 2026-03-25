@@ -1,0 +1,13 @@
+[core]
+	editor = vim
+	pager = delta
+[init]
+	defaultBranch = main
+[delta]
+	navigate = true
+	side-by-side = true
+	line-numbers = true
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default

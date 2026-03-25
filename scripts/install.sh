@@ -1,4 +1,5 @@
 ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 
 source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/powerline.sh
 source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/vim_deps.sh
