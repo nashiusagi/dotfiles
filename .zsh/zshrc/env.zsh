@@ -1,3 +1,6 @@
+# fd + fzf 連携
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git"
+
 ## tmux用
 unset TMPDIR
 TMUX_TMPDIR=/tmp

@@ -11,6 +11,9 @@ alias la="ls -laG"
 
 alias ...='cd ../..'
 
+# fd (Ubuntu では fdfind としてインストールされる)
+alias fd="fdfind"
+
 # wezterm
 alias wezterm="flatpak run org.wezfurlong.wezterm"
 
