@@ -7,6 +7,8 @@
 | **テーマ** | Powerlevel10k |
 | **補完** | zsh-completions |
 | **ファジーファインダー** | fzf |
+| **シンタックスハイライト** | zsh-syntax-highlighting |
+| **コマンド候補表示** | zsh-autosuggestions |
 
 ## エイリアス
 | エイリアス | コマンド | 説明 |
