@@ -12,6 +12,7 @@
 | **ファジーファインダー** | fzf, fzf.vim |
 | **LaTeX** | vimtex |
 | **コードフォーマット** | vim-prettier |
+| **括弧・クォート自動補完** | auto-pairs |
 | **HTMLタグ補完** | vim-closetag |
 | **コメントトグル** | vim-commentary（`gcc`: 行, `gc`: ビジュアル範囲） |
 | **インデントガイド** | indentLine |
