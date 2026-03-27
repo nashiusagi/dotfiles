@@ -15,6 +15,7 @@
 | **括弧・クォート自動補完** | auto-pairs |
 | **HTMLタグ補完** | vim-closetag |
 | **コメントトグル** | vim-commentary（`gcc`: 行, `gc`: ビジュアル範囲） |
+| **タブ・末尾スペースの可視化** | `set list` + `listchars`（タブ: `▸`, 末尾スペース: `·`） |
 | **インデントガイド** | indentLine |
 | **関数・クラス一覧** | tagbar |
 | **オートセーブ** | vim-auto-save |
