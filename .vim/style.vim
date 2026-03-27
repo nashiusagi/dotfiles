@@ -49,6 +49,7 @@ set smarttab
 " ルーラー（行、列、現在位置を右下に表示）
 set ruler
 set list
+set listchars=tab:▸\ ,trail:·
 
 " 自動折返し
 set linebreak
