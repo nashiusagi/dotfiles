@@ -144,6 +144,9 @@ Plugin 'jiangmiao/auto-pairs'
 " html
 Plugin 'alvan/vim-closetag'
 
+" CSSカラーコードをその色で表示
+Plugin 'ap/vim-css-color'
+
 " All of your Plugins must be added before the following line
 call vundle#end()           " required
 

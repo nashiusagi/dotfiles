@@ -14,6 +14,7 @@
 | **コードフォーマット** | vim-prettier |
 | **括弧・クォート自動補完** | auto-pairs |
 | **HTMLタグ補完** | vim-closetag |
+| **CSSカラープレビュー** | vim-css-color（カラーコードをその色で表示） |
 | **コメントトグル** | vim-commentary（`gcc`: 行, `gc`: ビジュアル範囲） |
 | **タブ・末尾スペースの可視化** | `set list` + `listchars`（タブ: `▸`, 末尾スペース: `·`） |
 | **インデントガイド** | indentLine |
