@@ -20,6 +20,17 @@
 | `...` | `cd ../..` | 2階層上に移動 |
 | `fd` | `fdfind` | fd（Ubuntu向けエイリアス） |
 | `wezterm` | `flatpak run org.wezfurlong.wezterm` | WezTerm 起動 |
+| `bat` | `batcat` | bat（Ubuntu向けエイリアス） |
+| `cat` | `batcat --paging=never --style=plain`（Ubuntu）/ `bat --paging=never --style=plain`（macOS） | シンタックスハイライト付きファイル表示 |
+
+## bat
+
+`MANPAGER` を設定し、manページをシンタックスハイライト付きで表示する。
+
+| 環境 | 設定値 |
+|------|--------|
+| Ubuntu | `sh -c 'col -bx \| batcat -l man -p'` |
+| macOS | `sh -c 'col -bx \| bat -l man -p'` |
 
 ## キーバインド
 
