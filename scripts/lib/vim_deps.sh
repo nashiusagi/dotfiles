@@ -13,5 +13,3 @@ function vim_deps() {
     # markdown-preview.nvim: markdownプレビュー（Mermaid対応）
     vim -E -s -u NONE +"call mkdp#util#install()" +qa
 }
-
-vim_deps

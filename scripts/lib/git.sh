@@ -28,6 +28,3 @@ EOF
 
     echo "~/.gitconfig を作成しました"
 }
-
-install_delta
-setup_gitconfig

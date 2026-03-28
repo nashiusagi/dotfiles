@@ -21,6 +21,9 @@ ln -s ~/dotfiles/.vimrc ~/.vimrc
 source "$(dirname "${BASH_SOURCE[0]:-$0}")/lib/vim_deps.sh"
 source "$(dirname "${BASH_SOURCE[0]:-$0}")/lib/git.sh"
 
+install_delta
+setup_gitconfig
+
 brew install eza fd bat node groff
 
 brew install --cask wezterm
@@ -31,3 +34,4 @@ yarn install
 cd ~
 
 vim +PluginInstall +qall
+vim_deps

@@ -5,6 +5,8 @@ source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/vim_deps.sh
 source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/git.sh
 
 powerline
+install_delta
+setup_gitconfig
 
 sudo apt install -y eza fd-find nodejs npm groff
 # bat は Ubuntu 22.04以降のみ apt でインストール可能
