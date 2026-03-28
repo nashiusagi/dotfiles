@@ -1,6 +1,7 @@
 ---
 name: review
 description: 現在のブランチまたは指定したPRの変更内容を批判的にレビューする。「/review」または「/review {PR番号}」で呼び出す。コードの正確さ、ドキュメントと実装の整合性、install scriptへのaptパッケージ追加漏れ、Ubuntu環境依存の問題などを確認する。PRを作成する前・レビューを依頼する前・変更内容に不安があるときは必ずこのスキルを使うこと。
+allowed-tools: Bash(git diff), Bash(git log), Bash(echo), Bash(gh), Read, Grep, Glob, Edit, Write, Agent
 ---
 
 ## 概要
