@@ -25,7 +25,7 @@
 
 ## bat
 
-- `MANPAGER` に `sh -c 'col -bx | bat -l man -p'` を設定し、manページをシンタックスハイライト付きで表示
+- `MANPAGER` に `sh -c 'col -bx | batcat -l man -p'` を設定し、manページをシンタックスハイライト付きで表示
 
 ## キーバインド
 
