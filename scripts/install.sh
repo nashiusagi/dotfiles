@@ -1,3 +1,6 @@
+#!/bin/bash
+set -ue
+
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 
 source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/powerline.sh
