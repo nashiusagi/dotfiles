@@ -9,7 +9,7 @@ alias ...='cd ../..'
 # bat (cat の置き換え)
 # Ubuntu では batcat、macOS (brew) では bat としてインストールされる
 if (( $+commands[batcat] )); then
-  alias bat="batcat"
+  alias bat="batcat"  # `bat filename` で直接呼び出せるようにする
   alias cat="batcat --paging=never --style=plain"
   export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 elif (( $+commands[bat] )); then
