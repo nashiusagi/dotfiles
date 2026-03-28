@@ -6,7 +6,7 @@ source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/git.sh
 
 powerline
 
-sudo apt install -y eza fd-find nodejs npm
+sudo apt install -y eza fd-find nodejs npm bat
 npm install -g yarn
 cd ~/.vim/bundle/coc.nvim
 yarn install
