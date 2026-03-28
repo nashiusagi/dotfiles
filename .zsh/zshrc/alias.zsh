@@ -10,7 +10,7 @@ alias ...='cd ../..'
 # Ubuntu では batcat としてインストールされる
 alias bat="batcat"
 alias cat="bat --paging=never"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 # fd (Ubuntu では fdfind としてインストールされる)
 alias fd="fdfind"
