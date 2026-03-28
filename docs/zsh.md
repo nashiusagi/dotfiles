@@ -25,7 +25,12 @@
 
 ## bat
 
-- `MANPAGER` に `sh -c 'col -bx | batcat -l man -p'` を設定し、manページをシンタックスハイライト付きで表示
+`MANPAGER` を設定し、manページをシンタックスハイライト付きで表示する。
+
+| 環境 | 設定値 |
+|------|--------|
+| Ubuntu | `sh -c 'col -bx \| batcat -l man -p'` |
+| macOS | `sh -c 'col -bx \| bat -l man -p'` |
 
 ## キーバインド
 
