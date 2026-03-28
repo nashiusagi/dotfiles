@@ -3,7 +3,11 @@
 set -ue
 
 function install_delta() {
-    sudo apt install -y git-delta
+    if [[ "$(uname)" == "Darwin" ]]; then
+        brew install git-delta
+    else
+        sudo apt install -y git-delta
+    fi
 }
 
 function setup_gitconfig() {
@@ -24,6 +28,3 @@ EOF
 
     echo "~/.gitconfig を作成しました"
 }
-
-install_delta
-setup_gitconfig

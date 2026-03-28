@@ -6,5 +6,3 @@ function powerline(){
     pip3 install  powerline-status
     pip3 install  powerline-shell
 }
-
-powerline

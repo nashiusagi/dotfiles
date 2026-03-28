@@ -18,8 +18,8 @@
 | `la` | `eza -lah --git` | 隠しファイルも含む詳細表示 |
 | `lt` | `eza --tree --level=2` | ディレクトリツリー表示 |
 | `...` | `cd ../..` | 2階層上に移動 |
-| `fd` | `fdfind` | fd（Ubuntu向けエイリアス） |
-| `wezterm` | `flatpak run org.wezfurlong.wezterm` | WezTerm 起動 |
+| `fd` | `fdfind` | fd（`fdfind` コマンドが存在する場合のみ設定、Ubuntu向け） |
+| `wezterm` | `flatpak run org.wezfurlong.wezterm` | WezTerm 起動（Linux + flatpak が存在する場合のみ設定） |
 | `bat` | `batcat` | bat（Ubuntu向けエイリアス） |
 | `cat` | `batcat --paging=never --style=plain`（Ubuntu）/ `bat --paging=never --style=plain`（macOS） | シンタックスハイライト付きファイル表示 |
 

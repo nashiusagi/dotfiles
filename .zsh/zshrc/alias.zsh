@@ -18,10 +18,14 @@ elif (( $+commands[bat] )); then
 fi
 
 # fd (Ubuntu では fdfind としてインストールされる)
-alias fd="fdfind"
+if (( $+commands[fdfind] )); then
+  alias fd="fdfind"
+fi
 
-# wezterm
-alias wezterm="flatpak run org.wezfurlong.wezterm"
+# wezterm (Ubuntu では flatpak 経由)
+if [[ "$(uname)" == "Linux" ]] && (( $+commands[flatpak] )); then
+  alias wezterm="flatpak run org.wezfurlong.wezterm"
+fi
 
 # branch
 _br() {
