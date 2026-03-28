@@ -21,7 +21,7 @@
 | `fd` | `fdfind` | fd（Ubuntu向けエイリアス） |
 | `wezterm` | `flatpak run org.wezfurlong.wezterm` | WezTerm 起動 |
 | `bat` | `batcat` | bat（Ubuntu向けエイリアス） |
-| `cat` | `bat --paging=never` | シンタックスハイライト付きファイル表示 |
+| `cat` | `bat --paging=never --style=plain` | シンタックスハイライト付きファイル表示 |
 
 ## bat
 
