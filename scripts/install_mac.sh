@@ -31,4 +31,3 @@ yarn install
 cd ~
 
 vim +PluginInstall +qall
-vim_deps
