@@ -124,6 +124,9 @@ Plugin 'prettier/vim-prettier'
 " Language Server
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
+" カーソル下の識別子を自動ハイライト
+Plugin 'RRethy/vim-illuminate'
+
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'

@@ -9,6 +9,7 @@
 | **補完エンジン** | coc.nvim |
 | **ステータスライン** | Powerline（Vim）/ vim-airline（Neovim） |
 | **Git連携** | vim-fugitive, vim-gitgutter |
+| **識別子ハイライト** | vim-illuminate（カーソル下の識別子を自動ハイライト） |
 | **ファジーファインダー** | fzf, fzf.vim |
 | **LaTeX** | vimtex |
 | **コードフォーマット** | vim-prettier |

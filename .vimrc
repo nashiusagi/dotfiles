@@ -9,4 +9,5 @@ source $HOME/dotfiles/.vim/myplugin-config/fzf.vim
 source $HOME/dotfiles/.vim/myplugin-config/indentline.vim
 source $HOME/dotfiles/.vim/myplugin-config/tagbar.vim
 source $HOME/dotfiles/.vim/myplugin-config/markdown-preview.vim
+source $HOME/dotfiles/.vim/myplugin-config/illuminate.vim
 
