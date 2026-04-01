@@ -45,3 +45,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export SDKMAN_DIR="$HOME/.sdkman"
 export SDKMAN_CANDIDATES_DIR="$SDKMAN_DIR/candidates"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+# navi (command cheatsheet, Ctrl+G)
+command -v navi &>/dev/null && eval "$(navi widget zsh)"

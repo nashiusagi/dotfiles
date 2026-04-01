@@ -42,6 +42,12 @@ fzf プラグイン（`junegunn/fzf`）が提供するキーバインド：
 | `Ctrl+T` | カレントディレクトリ以下のファイルをファジー検索してコマンドラインに挿入 |
 | `Alt+C` | ディレクトリをファジー検索して cd |
 
+navi が提供するキーバインド：
+
+| キー | 機能 |
+|------|------|
+| `Ctrl+G` | コマンドチートシートをファジー検索してコマンドラインに挿入 |
+
 補完：
 
 | キー | 機能 |
@@ -53,6 +59,12 @@ fzf プラグイン（`junegunn/fzf`）が提供するキーバインド：
 ## fzf
 - デフォルトオプション: `--height 40% --layout=reverse --border`
 - `FZF_DEFAULT_COMMAND`: `fd --type f --hidden --exclude .git`（fd と連携）
+
+## navi
+- `Ctrl+G` でコマンドのチートシートをファジー検索できる
+- コミュニティのチートシート（[denisidoro/cheats](https://github.com/denisidoro/cheats)）が利用可能
+- 自前のチートシートを追加して育てることもできる
+- インストール: `cargo install navi`（Rust / cargo が必要）
 
 ## 対応する開発環境
 - **Python**: pyenv

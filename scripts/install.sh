@@ -20,6 +20,14 @@ else
   echo "    https://github.com/sharkdp/bat/releases"
 fi
 npm install -g yarn
+
+# navi (command cheatsheet) — cargo が利用可能な場合にインストール
+if command -v cargo &>/dev/null; then
+  cargo install navi
+else
+  echo "⚠️  cargo が見つかりませんでした。navi をインストールするには Rust をインストールしてください:"
+  echo "    https://rustup.rs/"
+fi
 cd ~/.vim/bundle/coc.nvim
 yarn install
 cd ~
