@@ -25,3 +25,9 @@ bind C-s send-prefix
 
 ## Vimキーバインドでペインの中身を走査する
 set-window-option -g mode-keys vi
+
+## Popup window
+# lazygitをポップアップで起動
+bind -n 'M-g' display-popup -E -w 90% -h 90% 'lazygit'
+# fzfでセッション選択
+bind -n 'M-s' display-popup -E 'tmux list-sessions | fzf --reverse | cut -d: -f1 | xargs tmux switch-client -t'
