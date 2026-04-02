@@ -12,6 +12,11 @@ install_delta
 setup_gitconfig
 
 sudo apt install -y eza fd-find nodejs npm groff
+
+# lazygit
+sudo add-apt-repository -y ppa:lazygit-team/release
+sudo apt update
+sudo apt install -y lazygit
 # bat は Ubuntu 22.04以降のみ apt でインストール可能
 if apt-cache show bat &>/dev/null; then
   sudo apt install -y bat
