@@ -13,10 +13,12 @@ setup_gitconfig
 
 sudo apt install -y eza fd-find nodejs npm groff
 
-# lazygit
-sudo add-apt-repository -y ppa:lazygit-team/release
-sudo apt update
-sudo apt install -y lazygit
+# lazygit — GitHubリリースからバイナリをインストール
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo /tmp/lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf /tmp/lazygit.tar.gz -C /tmp lazygit
+sudo install /tmp/lazygit /usr/local/bin
+rm /tmp/lazygit /tmp/lazygit.tar.gz
 # bat は Ubuntu 22.04以降のみ apt でインストール可能
 if apt-cache show bat &>/dev/null; then
   sudo apt install -y bat
