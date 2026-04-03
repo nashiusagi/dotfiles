@@ -3,36 +3,12 @@ package.path = package.path..';'..os.getenv("HOME")..'/dotfiles/.wezterm/?.lua'
 local keybinds = require 'keybinds'
 local act=wezterm.action
 
-local function font_exists(font_name, fonts)
-    -- search with binary search
-    local ng,ok=0,#fonts
-    while ng+1<ok do
-        local mid=(ng+ok)>>1
-        if fonts[mid]<font_name then
-            ng=mid
-        else
-            ok=mid end end
-    return font_name == fonts[ok]
-end
-
-local function get_font_fallback(candidates, all_fonts)
-    local res --[[array<string>]] = {}
-    for i --[[integer]] =1, #candidates do
-        local cand --[[string]] = candidates[i]
-        table.insert(res,cand)
-    end
-
-    return res
-end
-
 local function make_font()
-    local all_fonts --[[array<string>]] = wezterm.GLOBAL.fonts
-    local candidates --[[array<string>]]={
-        "IPAGothic"
-    }
-    local fallback --[[array<string>]] = get_font_fallback(candidates, all_fonts)
-
-    return wezterm.font_with_fallback(fallback)
+    return wezterm.font_with_fallback({
+        'MesloLGS NF',
+        'Noto Sans Mono CJK JP',
+        'Noto Color Emoji',
+    })
 end
 
 local function set_battery_info()
@@ -79,7 +55,7 @@ return {
     ----------------------------------------------------
     -- fonts
     ----------------------------------------------------
-    --font = make_font(),
+    font = make_font(),
     font_size=13,
     line_height=1.0,
 }

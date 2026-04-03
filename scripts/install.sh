@@ -11,7 +11,7 @@ powerline
 install_delta
 setup_gitconfig
 
-sudo apt install -y eza fd-find nodejs npm groff
+sudo apt install -y eza fd-find nodejs npm groff fonts-noto-cjk
 
 # lazygit — GitHubリリースからバイナリをインストール
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
