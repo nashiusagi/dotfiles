@@ -11,7 +11,16 @@ powerline
 install_delta
 setup_gitconfig
 
-sudo apt install -y eza fd-find nodejs npm groff fonts-noto-cjk
+sudo apt install -y eza fd-find nodejs npm groff fonts-noto-cjk fontconfig
+
+# MesloLGS NF (powerlevel10k推奨フォント)
+FONT_DIR="$HOME/.local/share/fonts"
+mkdir -p "$FONT_DIR"
+MESLOLGS_BASE="https://github.com/romkatv/powerlevel10k-media/raw/master"
+for font in "MesloLGS NF Regular" "MesloLGS NF Bold" "MesloLGS NF Italic" "MesloLGS NF Bold Italic"; do
+  curl -fsSL "${MESLOLGS_BASE}/${font// /%20}.ttf" -o "${FONT_DIR}/${font}.ttf"
+done
+fc-cache -f "$FONT_DIR"
 
 # lazygit — GitHubリリースからバイナリをインストール
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')

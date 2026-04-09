@@ -8,6 +8,11 @@
 | **日時表示** | 右ステータスに表示 |
 | **IME** | ibus 対応（`use_ime = true`） |
 | **フォントサイズ** | 13 |
+| **フォント** | MesloLGS NF（fallback: Noto Sans Mono CJK JP, Noto Color Emoji） |
+
+## フォント
+
+`MesloLGS NF` を使用している。`scripts/install.sh` によって `~/.local/share/fonts/` にインストールされる。
 
 ## キーバインド
 
