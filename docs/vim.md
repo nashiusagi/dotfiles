@@ -25,6 +25,7 @@
 | **クイック実行** | vim-quickrun |
 | **Markdownプレビュー** | markdown-preview.nvim（`:MarkdownPreview`、Mermaid対応） |
 | **キーバインド表示** | vim-which-key（`<leader>` or `<space>` 押下でポップアップ表示） |
+| **ヤンクのハイライト** | vim-highlightedyank（ヤンク領域を300msハイライト表示） |
 
 ## キーバインド
 | キー | 機能 |

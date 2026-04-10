@@ -144,6 +144,9 @@ Plugin 'junegunn/fzf.vim'
 " キーバインド一覧をポップアップ表示
 Plugin 'liuchengxu/vim-which-key'
 
+" ヤンクした領域をハイライト表示
+Plugin 'machakann/vim-highlightedyank'
+
 " 括弧・クォートの自動補完
 Plugin 'jiangmiao/auto-pairs'
 
