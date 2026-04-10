@@ -24,6 +24,7 @@
 | **Undoツリー可視化** | gundo.vim |
 | **クイック実行** | vim-quickrun |
 | **Markdownプレビュー** | markdown-preview.nvim（`:MarkdownPreview`、Mermaid対応） |
+| **キーバインド表示** | vim-which-key（`<leader>` or `<space>` 押下でポップアップ表示） |
 
 ## キーバインド
 | キー | 機能 |
@@ -33,6 +34,7 @@
 | `Ctrl+F` | テキスト全体検索（fzf + ripgrep） |
 | `<leader>s` | カーソル下の単語をプロジェクト全体で検索（fzf + ripgrep） |
 | `<leader>b` | バッファ一覧（fzf） |
+| `<leader>?` | キーバインド一覧（fzf、日本語説明付き） |
 
 ## coc.nvim キーバインド
 | キー | 機能 |

@@ -141,6 +141,9 @@ endif
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 
+" キーバインド一覧をポップアップ表示
+Plugin 'liuchengxu/vim-which-key'
+
 " 括弧・クォートの自動補完
 Plugin 'jiangmiao/auto-pairs'
 
