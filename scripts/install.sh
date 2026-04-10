@@ -11,7 +11,7 @@ powerline
 install_delta
 setup_gitconfig
 
-sudo apt install -y eza fd-find nodejs npm groff fonts-noto-cjk fontconfig
+sudo apt install -y eza fd-find nodejs npm groff fonts-noto-cjk fontconfig ripgrep
 
 # MesloLGS NF (powerlevel10k推奨フォント)
 FONT_DIR="$HOME/.local/share/fonts"
