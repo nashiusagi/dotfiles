@@ -1,5 +1,8 @@
 " fzf.vim: ファジーファイル検索（VSCode Ctrl+P like）
 
+" Ubuntu では fd-find が fdfind としてインストールされるため明示的に指定
+let $FZF_DEFAULT_COMMAND = 'fdfind --type f --hidden --follow --exclude .git'
+
 " Ctrl+P でファイル検索
 nnoremap <C-p> :Files<CR>
 
