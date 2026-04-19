@@ -131,6 +131,9 @@ Plugin 'RRethy/vim-illuminate'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
+" フローティングターミナル
+Plugin 'voldikss/vim-floaterm'
+
 " vim-airline
 if has('nvim')
     Plugin 'vim-airline/vim-airline'

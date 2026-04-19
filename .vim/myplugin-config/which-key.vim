@@ -11,6 +11,8 @@ set timeoutlen=500
 " --- <leader> キーマップ定義 ---
 let g:which_key_map = {}
 
+let g:which_key_map['t'] = 'フローティングターミナルをトグル (floaterm)'
+let g:which_key_map['g'] = 'lazygitを起動 (floaterm)'
 let g:which_key_map['s'] = 'カーソル下の単語を検索'
 let g:which_key_map['b'] = 'バッファ一覧'
 let g:which_key_map['r'] = { 'name': 'Rename' }
@@ -68,6 +70,8 @@ let s:keymaps = [
   \ 'n   <space>j     次の診断へ (coc)',
   \ 'n   <space>k     前の診断へ (coc)',
   \ 'n   <space>p     CocListを再開',
+  \ 'n   <leader>t    フローティングターミナルをトグル (floaterm)',
+  \ 'n   <leader>g    lazygitを起動 (floaterm)',
   \ 'n   <leader>?    このキーバインド一覧を表示',
   \ ]
 
