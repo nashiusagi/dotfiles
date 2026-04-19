@@ -9,7 +9,8 @@
 | **補完エンジン** | coc.nvim |
 | **ステータスライン** | Powerline（Vim）/ vim-airline（Neovim） |
 | **Git連携** | vim-fugitive, vim-gitgutter |
-| **フローティングターミナル** | vim-floaterm（`<leader>t`: ターミナル, `<leader>g`: lazygit） |
+| **フローティングターミナル** | vim-floaterm（`<leader>tt`: ターミナル, `<leader>g`: lazygit） |
+| **テストランナー** | vim-test（`<leader>tn`: nearest, `<leader>tf`: file, `<leader>ts`: suite, `<leader>tl`: last） |
 | **識別子ハイライト** | vim-illuminate（カーソル下の識別子を自動ハイライト） |
 | **ファジーファインダー** | fzf, fzf.vim |
 | **LaTeX** | vimtex |
@@ -37,8 +38,12 @@
 | `<leader>s` | カーソル下の単語をプロジェクト全体で検索（fzf + ripgrep） |
 | `<leader>b` | バッファ一覧（fzf） |
 | `<leader>?` | キーバインド一覧（fzf、日本語説明付き） |
-| `<leader>t` | フローティングターミナルをトグル（vim-floaterm） |
+| `<leader>tt` | フローティングターミナルをトグル（vim-floaterm） |
 | `<leader>g` | lazygitをフローティングウィンドウで起動（vim-floaterm） |
+| `<leader>tn` | 最近傍テストを実行（vim-test） |
+| `<leader>tf` | ファイル内テストを実行（vim-test） |
+| `<leader>ts` | テストスイートを実行（vim-test） |
+| `<leader>tl` | 最後のテストを再実行（vim-test） |
 
 ## coc.nvim キーバインド
 | キー | 機能 |
