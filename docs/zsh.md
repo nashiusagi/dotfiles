@@ -8,6 +8,7 @@
 | **補完** | zsh-completions |
 | **ファジーファインダー** | fzf |
 | **シンタックスハイライト** | zsh-syntax-highlighting |
+| **Tab補完UI** | fzf-tab（Tab補完候補をfzfのインタラクティブUIで選択） |
 | **コマンド候補表示** | zsh-autosuggestions |
 
 ## エイリアス
@@ -53,9 +54,7 @@ navi が提供するキーバインド：
 
 | キー | 機能 |
 |------|------|
-| `Tab` | 補完候補を表示 / 候補を選択 |
-| `Ctrl+N` / `Ctrl+F` | 次の補完候補へ |
-| `Ctrl+P` / `Ctrl+B` | 前の補完候補へ |
+| `Tab` | fzf UIで補完候補をファジー絞り込み選択（fzf-tab） |
 
 ## fzf
 - デフォルトオプション: `--height 40% --layout=reverse --border`
