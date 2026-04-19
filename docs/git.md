@@ -26,6 +26,20 @@
 sudo apt install git-delta
 ```
 
+## forgit
+
+fzf のインタラクティブUIで git 操作を行える zsh プラグイン。
+
+| コマンド | 機能 |
+|---------|------|
+| `ga` | `git add` をfzfで選択 |
+| `glo` | `git log` をfzfで閲覧 |
+| `gd` | `git diff` をfzfで閲覧 |
+| `gcb` | `git checkout` ブランチをfzfで選択 |
+| `gco` | `git checkout` ファイルをfzfで選択 |
+| `grh` | `git reset HEAD` をfzfで選択 |
+| `gss` | `git stash show` をfzfで選択 |
+
 ## ユーザー情報の設定
 
 `~/.gitconfig` はスクリプトで生成する（ユーザー情報は `.gitconfig_example` に含めない）。
