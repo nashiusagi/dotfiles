@@ -19,6 +19,7 @@
 | `lt` | `eza --tree --level=2` | ディレクトリツリー表示 |
 | `...` | `cd ../..` | 2階層上に移動 |
 | `fd` | `fdfind` | fd（`fdfind` コマンドが存在する場合のみ設定、Ubuntu向け） |
+| `grep` | `rg` | ripgrep（`rg` コマンドが存在する場合のみ設定） |
 | `wezterm` | `flatpak run org.wezfurlong.wezterm` | WezTerm 起動（Linux + flatpak が存在する場合のみ設定） |
 | `bat` | `batcat` | bat（Ubuntu向けエイリアス） |
 | `cat` | `batcat --paging=never --style=plain`（Ubuntu）/ `bat --paging=never --style=plain`（macOS） | シンタックスハイライト付きファイル表示 |
