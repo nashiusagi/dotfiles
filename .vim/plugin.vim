@@ -134,6 +134,9 @@ Plugin 'airblade/vim-gitgutter'
 " フローティングターミナル
 Plugin 'voldikss/vim-floaterm'
 
+" テストランナー
+Plugin 'vim-test/vim-test'
+
 " vim-airline
 if has('nvim')
     Plugin 'vim-airline/vim-airline'
