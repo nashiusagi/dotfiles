@@ -27,6 +27,11 @@ if [[ "$(uname)" == "Linux" ]] && (( $+commands[flatpak] )); then
   alias wezterm="flatpak run org.wezfurlong.wezterm"
 fi
 
+# ripgrep (grep の置き換え)
+if (( $+commands[rg] )); then
+  alias grep="rg"
+fi
+
 # branch
 _br() {
   git branch --show-current
