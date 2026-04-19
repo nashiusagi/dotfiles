@@ -11,7 +11,12 @@ set timeoutlen=500
 " --- <leader> キーマップ定義 ---
 let g:which_key_map = {}
 
-let g:which_key_map['t'] = 'フローティングターミナルをトグル (floaterm)'
+let g:which_key_map['t'] = { 'name': 'Terminal / Test' }
+let g:which_key_map['t']['t'] = 'フローティングターミナルをトグル (floaterm)'
+let g:which_key_map['t']['n'] = '最近傍テストを実行 (vim-test)'
+let g:which_key_map['t']['f'] = 'ファイル内テストを実行 (vim-test)'
+let g:which_key_map['t']['s'] = 'テストスイートを実行 (vim-test)'
+let g:which_key_map['t']['l'] = '最後のテストを再実行 (vim-test)'
 let g:which_key_map['g'] = 'lazygitを起動 (floaterm)'
 let g:which_key_map['s'] = 'カーソル下の単語を検索'
 let g:which_key_map['b'] = 'バッファ一覧'
@@ -70,8 +75,12 @@ let s:keymaps = [
   \ 'n   <space>j     次の診断へ (coc)',
   \ 'n   <space>k     前の診断へ (coc)',
   \ 'n   <space>p     CocListを再開',
-  \ 'n   <leader>t    フローティングターミナルをトグル (floaterm)',
+  \ 'n   <leader>tt   フローティングターミナルをトグル (floaterm)',
   \ 'n   <leader>g    lazygitを起動 (floaterm)',
+  \ 'n   <leader>tn   最近傍テストを実行 (vim-test)',
+  \ 'n   <leader>tf   ファイル内テストを実行 (vim-test)',
+  \ 'n   <leader>ts   テストスイートを実行 (vim-test)',
+  \ 'n   <leader>tl   最後のテストを再実行 (vim-test)',
   \ 'n   <leader>?    このキーバインド一覧を表示',
   \ ]
 

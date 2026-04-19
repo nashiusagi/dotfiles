@@ -11,8 +11,8 @@ let g:floaterm_height = 0.85
 let g:floaterm_position = 'center'
 
 " フローティングターミナルをトグル
-nnoremap <silent> <leader>t :FloatermToggle<CR>
-tnoremap <silent> <leader>t <C-\><C-n>:FloatermToggle<CR>
+nnoremap <silent> <leader>tt :FloatermToggle<CR>
+tnoremap <silent> <leader>tt <C-\><C-n>:FloatermToggle<CR>
 
 " lazygitを起動
 nnoremap <silent> <leader>g :FloatermNew --title=lazygit lazygit<CR>
