@@ -7,7 +7,8 @@ function install_antidote(){
 }
 
 function install_fzf(){
-    sudo apt install -y fzf
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install --all
 }
 
 install_antidote
