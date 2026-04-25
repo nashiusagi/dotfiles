@@ -11,6 +11,7 @@
 | **Git連携** | vim-fugitive, vim-gitgutter |
 | **フローティングターミナル** | vim-floaterm（`<leader>tt`: ターミナル, `<leader>g`: lazygit） |
 | **テストランナー** | vim-test（`<leader>tn`: nearest, `<leader>tf`: file, `<leader>ts`: suite, `<leader>tl`: last） |
+| **プロジェクトルート検出** | vim-rooter（`.git`を基準にcwdを自動変更） |
 | **識別子ハイライト** | vim-illuminate（カーソル下の識別子を自動ハイライト） |
 | **ファジーファインダー** | fzf, fzf.vim |
 | **LaTeX** | vimtex |

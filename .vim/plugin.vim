@@ -137,6 +137,9 @@ Plugin 'voldikss/vim-floaterm'
 " テストランナー
 Plugin 'vim-test/vim-test'
 
+" プロジェクトルートを自動検出してcwdを変更
+Plugin 'airblade/vim-rooter'
+
 " vim-airline
 if has('nvim')
     Plugin 'vim-airline/vim-airline'

@@ -14,4 +14,5 @@ source $HOME/dotfiles/.vim/myplugin-config/which-key.vim
 source $HOME/dotfiles/.vim/myplugin-config/highlightedyank.vim
 source $HOME/dotfiles/.vim/myplugin-config/floaterm.vim
 source $HOME/dotfiles/.vim/myplugin-config/vim-test.vim
+source $HOME/dotfiles/.vim/myplugin-config/vim-rooter.vim
 
