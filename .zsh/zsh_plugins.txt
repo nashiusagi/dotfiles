@@ -4,4 +4,5 @@ junegunn/fzf path:shell/completion.zsh
 junegunn/fzf path:shell/key-bindings.zsh
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
+Aloxaf/fzf-tab
 wfxr/forgit
