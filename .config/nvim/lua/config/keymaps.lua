@@ -4,6 +4,12 @@ local opts = { noremap = true, silent = true }
 -- 行番号トグル
 map("n", "<leader>ln", ":set relativenumber!<CR>", opts)
 
+-- split間の移動
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-l>", "<C-w>l", opts)
+
 -- fzf
 vim.env.FZF_DEFAULT_COMMAND = "fdfind --type f --hidden --follow --exclude .git"
 map("n", "<C-p>", ":Files<CR>", opts)

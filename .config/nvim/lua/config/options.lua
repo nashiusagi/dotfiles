@@ -37,6 +37,8 @@ vim.opt.smarttab = true
 
 vim.opt.foldmethod = "marker"
 vim.opt.clipboard = "unnamed"
+vim.opt.mouse = "a"
+vim.opt.colorcolumn = "80"
 
 -- coc.nvim 由来の設定
 vim.opt.cmdheight = 2
