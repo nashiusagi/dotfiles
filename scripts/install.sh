@@ -1,14 +1,11 @@
 #!/bin/bash
 set -ue
 
-ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.config/nvim ~/.config/nvim
 
-source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/powerline.sh
 source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/vim_deps.sh
 source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/git.sh
 
-powerline
 install_delta
 setup_gitconfig
 
@@ -46,9 +43,6 @@ else
   echo "⚠️  cargo が見つかりませんでした。navi をインストールするには Rust をインストールしてください:"
   echo "    https://rustup.rs/"
 fi
-cd ~/.vim/bundle/coc.nvim
-yarn install
-cd ~
-
-vim +PluginInstall +qall
+# lazy.nvim プラグインをヘッドレスでインストール
+nvim --headless "+Lazy! sync" +qa
 vim_deps
