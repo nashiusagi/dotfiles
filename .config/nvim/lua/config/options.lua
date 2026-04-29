@@ -43,10 +43,7 @@ vim.opt.splitbelow = true
 vim.opt.colorcolumn = "80"
 vim.opt.conceallevel = 2
 
--- coc.nvim 由来の設定
-vim.opt.cmdheight = 2
 vim.opt.updatetime = 300
-vim.opt.shortmess:append("c")
 vim.opt.signcolumn = "yes"
 vim.opt.timeoutlen = 500
 
