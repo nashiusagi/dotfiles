@@ -2,6 +2,7 @@
 set -ue
 
 ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/.config/nvim ~/.config/nvim
 
 source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/powerline.sh
 source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/vim_deps.sh
@@ -12,6 +13,7 @@ install_delta
 setup_gitconfig
 
 sudo apt install -y eza fd-find nodejs npm groff fonts-noto-cjk fontconfig ripgrep
+sudo snap install nvim --classic
 
 # MesloLGS NF (powerlevel10k推奨フォント)
 FONT_DIR="$HOME/.local/share/fonts"
