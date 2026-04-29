@@ -50,12 +50,12 @@ return {
   -- ヤンクのハイライト（300ms）
   {
     "machakann/vim-highlightedyank",
-    event = "BufRead",
+    event = "VeryLazy",
     init = function()
       vim.g.highlightedyank_highlight_duration = 300
     end,
   },
 
   -- CSSカラープレビュー
-  { "ap/vim-css-color", event = "BufRead" },
+  { "ap/vim-css-color", event = "VeryLazy" },
 }

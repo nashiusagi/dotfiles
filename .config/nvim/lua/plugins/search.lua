@@ -3,10 +3,11 @@ return {
   {
     "junegunn/fzf",
     build = "./install --bin",
+    lazy = true,
   },
 
   -- fzf vim統合
-  { "junegunn/fzf.vim", dependencies = { "junegunn/fzf" } },
+  { "junegunn/fzf.vim", dependencies = { "junegunn/fzf" }, event = "VeryLazy" },
 
   -- ファイルツリー
   {
