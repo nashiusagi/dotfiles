@@ -24,7 +24,7 @@
 | **インデントガイド** | indent-blankline.nvim |
 | **関数・クラス一覧** | aerial.nvim（`Ctrl+t`でトグル、LSP/treesitter連携） |
 | **オートセーブ** | autocmd（FocusLost/BufLeave で `silent! wa`） |
-| **Undoツリー可視化** | gundo.vim |
+| **Undoツリー可視化** | undotree（`<leader>u`でトグル） |
 | **クイック実行** | vim-quickrun |
 | **Markdownプレビュー** | markdown-preview.nvim（`:MarkdownPreview`、Mermaid対応） |
 | **キーバインド表示** | vim-which-key（`<leader>` 押下でポップアップ表示） |

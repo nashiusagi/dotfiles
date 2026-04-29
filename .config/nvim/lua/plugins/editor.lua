@@ -28,7 +28,11 @@ return {
   { "thinca/vim-quickrun", cmd = "QuickRun" },
 
   -- Undoツリー可視化
-  { "sjl/gundo.vim", cmd = "GundoToggle" },
+  {
+    "mbbill/undotree",
+    cmd = "UndotreeToggle",
+    keys = { { "<leader>u", "<cmd>UndotreeToggle<CR>" } },
+  },
 
   -- 関数・クラス一覧（aerial）
   {
