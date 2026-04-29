@@ -1,8 +1,0 @@
-{
-  "python.analysis.autoImportCompletions": true,
-  "python.analysis.typeCheckingMode": "basic",
-  "pyright.inlayHints.variableTypes": false,
-  "pyright.inlayHints.functionReturnTypes": false,
-  "suggest.noselect": false
-}
-
