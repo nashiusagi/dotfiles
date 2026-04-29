@@ -13,7 +13,7 @@
 | **フローティングターミナル** | vim-floaterm（`<leader>tt`: ターミナル, `<leader>g`: lazygit） |
 | **テストランナー** | vim-test（floaterm連携） |
 | **プロジェクトルート検出** | vim-rooter（`.git`を基準にcwdを自動変更） |
-| **識別子ハイライト** | vim-illuminate（250ms遅延） |
+| **識別子ハイライト** | vim-illuminate（500ms遅延、2箇所以上一致でハイライト） |
 | **ファジーファインダー** | fzf, fzf.vim |
 | **LaTeX** | vimtex |
 | **コードフォーマット** | vim-prettier |
