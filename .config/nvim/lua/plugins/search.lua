@@ -2,9 +2,7 @@ return {
   -- fzf本体
   {
     "junegunn/fzf",
-    build = function()
-      vim.fn["fzf#install"]()
-    end,
+    build = "./install --bin",
   },
 
   -- fzf vim統合

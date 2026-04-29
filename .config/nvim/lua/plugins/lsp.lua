@@ -12,6 +12,7 @@ return {
     dependencies = { "williamboman/mason.nvim" },
     opts = {
       ensure_installed = { "pyright" },
+      automatic_enable = false,
     },
   },
 

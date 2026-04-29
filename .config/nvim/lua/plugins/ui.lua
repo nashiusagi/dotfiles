@@ -17,29 +17,31 @@ return {
     opts = {},
   },
 
-  -- キーバインド一覧（vim-which-key → which-key.nvim）
+  -- キーバインド一覧
   {
-    "folke/which-key.nvim",
+    "liuchengxu/vim-which-key",
     event = "VeryLazy",
-    opts = { delay = 500 },
-    config = function(_, opts)
-      local wk = require("which-key")
-      wk.setup(opts)
-      wk.add({
-        { "<leader>t",  group = "Terminal / Test" },
-        { "<leader>tt", desc = "フローティングターミナルをトグル (floaterm)" },
-        { "<leader>tn", desc = "最近傍テストを実行 (vim-test)" },
-        { "<leader>tf", desc = "ファイル内テストを実行 (vim-test)" },
-        { "<leader>ts", desc = "テストスイートを実行 (vim-test)" },
-        { "<leader>tl", desc = "最後のテストを再実行 (vim-test)" },
-        { "<leader>g",  desc = "lazygitを起動 (floaterm)" },
-        { "<leader>s",  desc = "カーソル下の単語を検索" },
-        { "<leader>b",  desc = "バッファ一覧" },
-        { "<leader>rn", desc = "シンボルのリネーム (LSP)" },
-        { "<leader>f",  desc = "フォーマット (LSP)" },
-        { "<leader>a",  desc = "コードアクション (LSP)" },
-        { "<leader>?",  desc = "キーバインド一覧" },
-      })
+    config = function()
+      vim.g.which_key_map = {
+        t = {
+          name = "Terminal / Test",
+          t = "フローティングターミナルをトグル (floaterm)",
+          n = "最近傍テストを実行 (vim-test)",
+          f = "ファイル内テストを実行 (vim-test)",
+          s = "テストスイートを実行 (vim-test)",
+          l = "最後のテストを再実行 (vim-test)",
+        },
+        g  = "lazygitを起動 (floaterm)",
+        s  = "カーソル下の単語を検索",
+        b  = "バッファ一覧",
+        rn = "シンボルのリネーム (LSP)",
+        f  = "フォーマット (LSP)",
+        a  = "コードアクション (LSP)",
+        ["?"] = "キーバインド一覧",
+      }
+      vim.call("which_key#register", "\\", "g:which_key_map")
+      vim.keymap.set("n", "<leader>", ":<C-u>WhichKey '\\'<CR>", { silent = true })
+      vim.keymap.set("v", "<leader>", ":<C-u>WhichKeyVisual '\\'<CR>", { silent = true })
     end,
   },
 

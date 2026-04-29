@@ -14,7 +14,7 @@ vim.opt.list = true
 vim.opt.listchars = { tab = "▸ ", trail = "·" }
 
 vim.opt.fileencoding = "utf-8"
-vim.opt.nowritebackup = true
+vim.opt.writebackup = false
 vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.autoread = true
@@ -37,8 +37,6 @@ vim.opt.smarttab = true
 
 vim.opt.foldmethod = "marker"
 vim.opt.clipboard = "unnamed"
-
-vim.opt.t_Co = 256
 
 -- coc.nvim 由来の設定
 vim.opt.cmdheight = 2
