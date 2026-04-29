@@ -14,17 +14,12 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'  # vim-vintはPython 3.14以降未対応のため固定
-      
-      - name: Install vint
-        run: pip install "setuptools<70" vim-vint
-      
-      - name: Run vint on vim config files
-        run: vint --error .vimrc .vim/
+
+      - name: Install luacheck
+        run: sudo apt-get install -y luarocks && sudo luarocks install luacheck
+
+      - name: Run luacheck on Neovim config
+        run: luacheck .config/nvim/lua/ --globals vim --no-unused-args
 
   tmux-lint-check:
     runs-on: ubuntu-24.04
