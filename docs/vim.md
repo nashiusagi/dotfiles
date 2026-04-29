@@ -23,7 +23,7 @@
 | **コメントトグル** | vim-commentary（`gcc`: 行, `gc`: ビジュアル範囲） |
 | **インデントガイド** | indent-blankline.nvim |
 | **関数・クラス一覧** | tagbar（`Ctrl+t`でトグル） |
-| **オートセーブ** | vim-auto-save |
+| **オートセーブ** | autocmd（FocusLost/BufLeave で `silent! wa`） |
 | **Undoツリー可視化** | gundo.vim |
 | **クイック実行** | vim-quickrun |
 | **Markdownプレビュー** | markdown-preview.nvim（`:MarkdownPreview`、Mermaid対応） |

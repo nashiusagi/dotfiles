@@ -20,6 +20,12 @@ autocmd("FileType", {
   end,
 })
 
+-- フォーカスが外れたとき・バッファ離脱時に自動保存
+autocmd({ "FocusLost", "BufLeave" }, {
+  pattern = "*",
+  command = "silent! wa",
+})
+
 -- ファイルタイプ別フォールド設定
 augroup("MyFolding", { clear = true })
 autocmd("FileType", {

@@ -23,15 +23,6 @@ return {
     end,
   },
 
-  -- オートセーブ
-  {
-    "vim-scripts/vim-auto-save",
-    event = "BufRead",
-    init = function()
-      vim.g.auto_save = 1
-    end,
-  },
-
   -- クイック実行
   { "thinca/vim-quickrun", cmd = "QuickRun" },
 
