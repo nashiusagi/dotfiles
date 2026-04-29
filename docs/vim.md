@@ -5,7 +5,7 @@
 |------|------|
 | **プラグイン管理** | lazy.nvim |
 | **カラースキーム** | molokai |
-| **ファイルツリー** | NERDTree（`Ctrl+e`でトグル） |
+| **ファイルツリー** | nvim-tree.lua（`Ctrl+e`でトグル） |
 | **補完エンジン** | nvim-cmp + LuaSnip |
 | **LSP** | Neovim native LSP（mason でサーバー管理） |
 | **ステータスライン** | lualine.nvim |

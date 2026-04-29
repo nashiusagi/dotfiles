@@ -40,7 +40,7 @@ map("n", "<space>a", vim.diagnostic.setloclist, opts)
 local keymaps = {
   "n   <C-p>        ファイル検索 (fzf)",
   "n   <C-f>        テキスト全体検索 (ripgrep)",
-  "n   <C-e>        NERDTreeトグル",
+  "n   <C-e>        NvimTreeトグル",
   "n   <C-t>        Tagbarトグル",
   "n   <leader>s    カーソル下の単語をプロジェクト全体で検索",
   "n   <leader>b    バッファ一覧",
