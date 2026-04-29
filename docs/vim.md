@@ -3,12 +3,12 @@
 
 | 項目 | 説明 |
 |------|------|
-| **プラグイン管理** | Vundle |
+| **プラグイン管理** | lazy.nvim（Neovim）/ Vundle（Vim） |
 | **カラースキーム** | molokai |
 | **ファイルツリー** | NERDTree（`Ctrl+e`でトグル） |
-| **補完エンジン** | coc.nvim |
-| **ステータスライン** | Powerline（Vim）/ vim-airline（Neovim） |
-| **Git連携** | vim-fugitive, vim-gitgutter |
+| **補完エンジン** | nvim-cmp + nvim-lspconfig + LuaSnip（Neovim）/ coc.nvim（Vim） |
+| **ステータスライン** | lualine.nvim（Neovim）/ Powerline（Vim） |
+| **Git連携** | vim-fugitive, gitsigns.nvim |
 | **フローティングターミナル** | vim-floaterm（`<leader>tt`: ターミナル, `<leader>g`: lazygit） |
 | **テストランナー** | vim-test（`<leader>tn`: nearest, `<leader>tf`: file, `<leader>ts`: suite, `<leader>tl`: last） |
 | **プロジェクトルート検出** | vim-rooter（`.git`を基準にcwdを自動変更） |
@@ -62,11 +62,24 @@
 
 ## Neovim設定
 
-Neovim は `~/.config/nvim/` を設定ディレクトリとして使用する。
-`dotfiles/.config/nvim/init.vim` が `~/.config/nvim/` にシンボリックリンクされており、既存の `.vimrc` をそのまま読み込む。
+Neovim は `~/.config/nvim/` を設定ディレクトリとして使用する（Lua設定）。
+`dotfiles/.config/nvim/` が `~/.config/nvim/` にシンボリックリンクされている。
 
 ```
-~/.config/nvim/init.vim  →  ~/dotfiles/.config/nvim/init.vim
+~/.config/nvim/  →  ~/dotfiles/.config/nvim/
+├── init.lua                  # エントリーポイント（lazy.nvim bootstrap）
+└── lua/
+    ├── config/
+    │   ├── options.lua       # 基本設定
+    │   ├── keymaps.lua       # キーマップ
+    │   └── autocmds.lua      # 自動コマンド
+    └── plugins/
+        ├── ui.lua            # UI系プラグイン
+        ├── editor.lua        # 編集支援系プラグイン
+        ├── git.lua           # Git系プラグイン
+        ├── lsp.lua           # LSP + 補完
+        ├── search.lua        # 検索・ファイルナビゲーション
+        └── lang.lua          # 言語別プラグイン
 ```
 
 ## プラグインのインストール
@@ -75,9 +88,7 @@ Neovim は `~/.config/nvim/` を設定ディレクトリとして使用する。
 # Neovim をインストール
 sudo snap install nvim --classic
 
-# Vundleをインストール
-git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
-
 # プラグインをインストール・依存関係のセットアップ（シンボリックリンク作成含む）
 bash scripts/install.sh
+# → 初回起動時に lazy.nvim が自動で全プラグインをインストールする
 ```

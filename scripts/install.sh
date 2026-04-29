@@ -46,9 +46,6 @@ else
   echo "⚠️  cargo が見つかりませんでした。navi をインストールするには Rust をインストールしてください:"
   echo "    https://rustup.rs/"
 fi
-cd ~/.vim/bundle/coc.nvim
-yarn install
-cd ~
-
-vim +PluginInstall +qall
+# lazy.nvim プラグインをヘッドレスでインストール
+nvim --headless "+Lazy! sync" +qa
 vim_deps
