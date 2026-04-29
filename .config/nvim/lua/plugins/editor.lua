@@ -1,6 +1,6 @@
 return {
   -- 括弧・クォート自動補完
-  { "jiangmiao/auto-pairs", event = "InsertEnter" },
+  { "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
 
   -- HTMLタグ補完
   { "alvan/vim-closetag", ft = { "html", "xml" } },
