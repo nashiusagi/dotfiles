@@ -22,7 +22,7 @@
 | **CSSカラープレビュー** | vim-css-color |
 | **コメントトグル** | vim-commentary（`gcc`: 行, `gc`: ビジュアル範囲） |
 | **インデントガイド** | indent-blankline.nvim |
-| **関数・クラス一覧** | tagbar（`Ctrl+t`でトグル） |
+| **関数・クラス一覧** | aerial.nvim（`Ctrl+t`でトグル、LSP/treesitter連携） |
 | **オートセーブ** | autocmd（FocusLost/BufLeave で `silent! wa`） |
 | **Undoツリー可視化** | gundo.vim |
 | **クイック実行** | vim-quickrun |
@@ -80,7 +80,7 @@
 | Python | pyright |
 | Go | gopls |
 
-追加は `lsp.lua` の `ensure_installed` と `vim.lsp.config` に記述する。
+追加は `lsp.lua` の `vim.lsp.config` と `vim.lsp.enable` に記述する。サーバーは Mason でインストールする。
 
 ## Neovim設定ファイル構成
 

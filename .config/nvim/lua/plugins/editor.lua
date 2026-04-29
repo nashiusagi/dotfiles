@@ -19,7 +19,7 @@ return {
       require("illuminate").configure({
         delay = 500,
         min_count_to_highlight = 2,
-        filetypes_denylist = { "NERDTree", "tagbar", "fzf" },
+        filetypes_denylist = { "NvimTree", "aerial", "fzf" },
       })
     end,
   },
@@ -30,11 +30,14 @@ return {
   -- Undoツリー可視化
   { "sjl/gundo.vim", cmd = "GundoToggle" },
 
-  -- 関数・クラス一覧（tagbar）
+  -- 関数・クラス一覧（aerial）
   {
-    "preservim/tagbar",
-    cmd = "TagbarToggle",
-    keys = { { "<C-t>", ":TagbarToggle<CR>", silent = true } },
+    "stevearc/aerial.nvim",
+    keys = { { "<C-t>", "<cmd>AerialToggle<CR>", silent = true } },
+    opts = {
+      backends = { "lsp" },
+      layout = { min_width = 28 },
+    },
   },
 
   -- プロジェクトルート自動検出

@@ -41,7 +41,7 @@ local keymaps = {
   "n   <C-p>        ファイル検索 (fzf)",
   "n   <C-f>        テキスト全体検索 (ripgrep)",
   "n   <C-e>        NvimTreeトグル",
-  "n   <C-t>        Tagbarトグル",
+  "n   <C-t>        関数・クラス一覧トグル (aerial)",
   "n   <leader>s    カーソル下の単語をプロジェクト全体で検索",
   "n   <leader>b    バッファ一覧",
   "n   <leader>rn   シンボルのリネーム (LSP)",
