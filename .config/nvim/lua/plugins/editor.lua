@@ -12,7 +12,16 @@ return {
   { "tpope/vim-unimpaired", event = "BufRead" },
 
   -- カーソル下の識別子をハイライト
-  { "RRethy/vim-illuminate", event = "BufRead" },
+  {
+    "RRethy/vim-illuminate",
+    event = "BufRead",
+    config = function()
+      require("illuminate").configure({
+        delay = 250,
+        filetypes_denylist = { "NERDTree", "tagbar", "fzf" },
+      })
+    end,
+  },
 
   -- オートセーブ
   {

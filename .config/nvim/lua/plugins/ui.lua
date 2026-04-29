@@ -14,7 +14,9 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     event = "BufRead",
-    opts = {},
+    opts = {
+      exclude = { filetypes = { "json", "markdown" } },
+    },
   },
 
   -- キーバインド一覧
@@ -45,8 +47,14 @@ return {
     end,
   },
 
-  -- ヤンクのハイライト
-  { "machakann/vim-highlightedyank", event = "BufRead" },
+  -- ヤンクのハイライト（300ms）
+  {
+    "machakann/vim-highlightedyank",
+    event = "BufRead",
+    init = function()
+      vim.g.highlightedyank_highlight_duration = 300
+    end,
+  },
 
   -- CSSカラープレビュー
   { "ap/vim-css-color", event = "BufRead" },
