@@ -29,3 +29,39 @@ map("n", "<leader>ac", vim.lsp.buf.code_action, opts)
 map("n", "[g", vim.diagnostic.goto_prev, opts)
 map("n", "]g", vim.diagnostic.goto_next, opts)
 map("n", "<space>a", vim.diagnostic.setloclist, opts)
+
+-- キーバインド一覧をfzfで表示
+local keymaps = {
+  "n   <C-p>        ファイル検索 (fzf)",
+  "n   <C-f>        テキスト全体検索 (ripgrep)",
+  "n   <C-e>        NERDTreeトグル",
+  "n   <C-t>        Tagbarトグル",
+  "n   <leader>s    カーソル下の単語をプロジェクト全体で検索",
+  "n   <leader>b    バッファ一覧",
+  "n   <leader>rn   シンボルのリネーム (LSP)",
+  "n   <leader>f    フォーマット (LSP)",
+  "n   <leader>a    コードアクション (LSP)",
+  "n   <leader>ac   コードアクション（バッファ全体）(LSP)",
+  "n   gd           定義へジャンプ (LSP)",
+  "n   gy           型定義へジャンプ (LSP)",
+  "n   gi           実装へジャンプ (LSP)",
+  "n   gr           参照を表示 (LSP)",
+  "n   K            ドキュメント表示 (LSP)",
+  "n   <space>a     診断一覧",
+  "n   <leader>tt   フローティングターミナルをトグル (floaterm)",
+  "n   <leader>g    lazygitを起動 (floaterm)",
+  "n   <leader>tn   最近傍テストを実行 (vim-test)",
+  "n   <leader>tf   ファイル内テストを実行 (vim-test)",
+  "n   <leader>ts   テストスイートを実行 (vim-test)",
+  "n   <leader>tl   最後のテストを再実行 (vim-test)",
+  "n   <leader>?    このキーバインド一覧を表示",
+}
+
+vim.api.nvim_create_user_command("Keymaps", function()
+  vim.fn["fzf#run"](vim.fn["fzf#wrap"]({
+    source = keymaps,
+    options = { "--prompt", "Keymaps> ", "--no-multi" },
+  }))
+end, {})
+
+map("n", "<leader>?", ":Keymaps<CR>", opts)
