@@ -60,12 +60,24 @@
 | `<space>e` | 拡張機能一覧 |
 
 
+## Neovim設定
+
+Neovim は `~/.config/nvim/` を設定ディレクトリとして使用する。
+`dotfiles/.config/nvim/init.vim` が `~/.config/nvim/` にシンボリックリンクされており、既存の `.vimrc` をそのまま読み込む。
+
+```
+~/.config/nvim/init.vim  →  ~/dotfiles/.config/nvim/init.vim
+```
+
 ## プラグインのインストール
 
 ```bash
+# Neovim をインストール
+sudo snap install nvim --classic
+
 # Vundleをインストール
 git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
 
-# プラグインをインストール・依存関係のセットアップ
+# プラグインをインストール・依存関係のセットアップ（シンボリックリンク作成含む）
 bash scripts/install.sh
 ```
