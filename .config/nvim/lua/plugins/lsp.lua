@@ -67,8 +67,13 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+      local mason_bin = vim.fn.stdpath("data") .. "/mason/bin/"
+
       -- Python（coc-settings.json の設定を移植）
       vim.lsp.config("pyright", {
+        cmd = { mason_bin .. "pyright-langserver", "--stdio" },
+        filetypes = { "python" },
+        root_markers = { "pyproject.toml", "setup.py", "setup.cfg", ".git" },
         capabilities = capabilities,
         settings = {
           python = {

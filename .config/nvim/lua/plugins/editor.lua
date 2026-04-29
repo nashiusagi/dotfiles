@@ -33,10 +33,9 @@ return {
   -- 関数・クラス一覧（aerial）
   {
     "stevearc/aerial.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
     keys = { { "<C-t>", "<cmd>AerialToggle<CR>", silent = true } },
     opts = {
-      backends = { "lsp", "treesitter" },
+      backends = { "lsp" },
       layout = { min_width = 28 },
     },
   },
