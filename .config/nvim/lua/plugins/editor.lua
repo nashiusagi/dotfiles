@@ -17,7 +17,8 @@ return {
     event = "BufRead",
     config = function()
       require("illuminate").configure({
-        delay = 250,
+        delay = 500,
+        min_count_to_highlight = 2,
         filetypes_denylist = { "NERDTree", "tagbar", "fzf" },
       })
     end,
