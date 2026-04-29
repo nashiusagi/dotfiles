@@ -1,52 +1,55 @@
-# Vim / Neovim
+# Neovim
 ## 設定
 
 | 項目 | 説明 |
 |------|------|
-| **プラグイン管理** | lazy.nvim（Neovim）/ Vundle（Vim） |
+| **プラグイン管理** | lazy.nvim |
 | **カラースキーム** | molokai |
 | **ファイルツリー** | NERDTree（`Ctrl+e`でトグル） |
-| **補完エンジン** | nvim-cmp + nvim-lspconfig + LuaSnip（Neovim）/ coc.nvim（Vim） |
-| **ステータスライン** | lualine.nvim（Neovim）/ Powerline（Vim） |
+| **補完エンジン** | nvim-cmp + LuaSnip |
+| **LSP** | Neovim native LSP（mason でサーバー管理） |
+| **ステータスライン** | lualine.nvim |
 | **Git連携** | vim-fugitive, gitsigns.nvim |
 | **フローティングターミナル** | vim-floaterm（`<leader>tt`: ターミナル, `<leader>g`: lazygit） |
-| **テストランナー** | vim-test（`<leader>tn`: nearest, `<leader>tf`: file, `<leader>ts`: suite, `<leader>tl`: last） |
+| **テストランナー** | vim-test（floaterm連携） |
 | **プロジェクトルート検出** | vim-rooter（`.git`を基準にcwdを自動変更） |
-| **識別子ハイライト** | vim-illuminate（カーソル下の識別子を自動ハイライト） |
+| **識別子ハイライト** | vim-illuminate（250ms遅延） |
 | **ファジーファインダー** | fzf, fzf.vim |
 | **LaTeX** | vimtex |
 | **コードフォーマット** | vim-prettier |
 | **括弧・クォート自動補完** | auto-pairs |
 | **HTMLタグ補完** | vim-closetag |
-| **CSSカラープレビュー** | vim-css-color（カラーコードをその色で表示） |
+| **CSSカラープレビュー** | vim-css-color |
 | **コメントトグル** | vim-commentary（`gcc`: 行, `gc`: ビジュアル範囲） |
-| **タブ・末尾スペースの可視化** | `set list` + `listchars`（タブ: `▸`, 末尾スペース: `·`） |
-| **インデントガイド** | indentLine |
-| **関数・クラス一覧** | tagbar |
+| **インデントガイド** | indent-blankline.nvim |
+| **関数・クラス一覧** | tagbar（`Ctrl+t`でトグル） |
 | **オートセーブ** | vim-auto-save |
 | **Undoツリー可視化** | gundo.vim |
 | **クイック実行** | vim-quickrun |
 | **Markdownプレビュー** | markdown-preview.nvim（`:MarkdownPreview`、Mermaid対応） |
-| **キーバインド表示** | vim-which-key（`<leader>` or `<space>` 押下でポップアップ表示） |
-| **ヤンクのハイライト** | vim-highlightedyank（ヤンク領域を300msハイライト表示） |
+| **キーバインド表示** | vim-which-key（`<leader>` 押下でポップアップ表示） |
+| **ヤンクのハイライト** | vim-highlightedyank（300ms） |
 
 ## キーバインド
+
+### 基本
 | キー | 機能 |
 |------|------|
 | `<leader>ln` | 相対・絶対行番号をトグル |
-| `Ctrl+P` | ファイル検索（fzf） |
-| `Ctrl+F` | テキスト全体検索（fzf + ripgrep） |
-| `<leader>s` | カーソル下の単語をプロジェクト全体で検索（fzf + ripgrep） |
-| `<leader>b` | バッファ一覧（fzf） |
+| `Ctrl+h/j/k/l` | split間の移動 |
 | `<leader>?` | キーバインド一覧（fzf、日本語説明付き） |
-| `<leader>tt` | フローティングターミナルをトグル（vim-floaterm） |
-| `<leader>g` | lazygitをフローティングウィンドウで起動（vim-floaterm） |
-| `<leader>tn` | 最近傍テストを実行（vim-test） |
-| `<leader>tf` | ファイル内テストを実行（vim-test） |
-| `<leader>ts` | テストスイートを実行（vim-test） |
-| `<leader>tl` | 最後のテストを再実行（vim-test） |
 
-## coc.nvim キーバインド
+### 検索・ナビゲーション
+| キー | 機能 |
+|------|------|
+| `Ctrl+p` | ファイル検索（fzf） |
+| `Ctrl+f` | テキスト全体検索（ripgrep） |
+| `<leader>s` | カーソル下の単語をプロジェクト全体で検索 |
+| `<leader>b` | バッファ一覧 |
+| `Ctrl+e` | NERDTreeトグル |
+| `Ctrl+t` | tagbarトグル |
+
+### LSP
 | キー | 機能 |
 |------|------|
 | `gd` | 定義へジャンプ |
@@ -56,14 +59,30 @@
 | `K` | ドキュメント表示 |
 | `<leader>rn` | シンボルのリネーム |
 | `<leader>f` | フォーマット |
+| `<leader>a` | コードアクション |
+| `[g` / `]g` | 診断の前/次へ |
 | `<space>a` | 診断一覧 |
-| `<space>e` | 拡張機能一覧 |
 
+### ターミナル・テスト
+| キー | 機能 |
+|------|------|
+| `<leader>tt` | フローティングターミナルをトグル |
+| `<leader>g` | lazygitを起動 |
+| `<leader>tn` | 最近傍テストを実行 |
+| `<leader>tf` | ファイル内テストを実行 |
+| `<leader>ts` | テストスイートを実行 |
+| `<leader>tl` | 最後のテストを再実行 |
 
-## Neovim設定
+## LSPサーバー
 
-Neovim は `~/.config/nvim/` を設定ディレクトリとして使用する（Lua設定）。
-`dotfiles/.config/nvim/` が `~/.config/nvim/` にシンボリックリンクされている。
+| 言語 | サーバー |
+|------|--------|
+| Python | pyright |
+| Go | gopls |
+
+追加は `lsp.lua` の `ensure_installed` と `vim.lsp.config` に記述する。
+
+## Neovim設定ファイル構成
 
 ```
 ~/.config/nvim/  →  ~/dotfiles/.config/nvim/
@@ -82,13 +101,22 @@ Neovim は `~/.config/nvim/` を設定ディレクトリとして使用する（
         └── lang.lua          # 言語別プラグイン
 ```
 
-## プラグインのインストール
+## lazy.nvim 管理コマンド
+
+| コマンド | 機能 |
+|----------|------|
+| `:Lazy` | プラグイン管理UI |
+| `:Mason` | LSPサーバー管理UI |
+
+## インストール
 
 ```bash
-# Neovim をインストール
-sudo snap install nvim --classic
+# Neovim をインストール（AppImage推奨）
+wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.appimage
+chmod +x nvim-linux-x86_64.appimage
+sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 
-# プラグインをインストール・依存関係のセットアップ（シンボリックリンク作成含む）
+# シンボリックリンク作成・依存関係のセットアップ
 bash scripts/install.sh
-# → 初回起動時に lazy.nvim が自動で全プラグインをインストールする
+# → 初回起動時に lazy.nvim が全プラグインを自動インストールする
 ```
