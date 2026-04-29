@@ -60,6 +60,7 @@ local keymaps = {
   "n   <leader>tf   ファイル内テストを実行 (vim-test)",
   "n   <leader>ts   テストスイートを実行 (vim-test)",
   "n   <leader>tl   最後のテストを再実行 (vim-test)",
+  "n   <leader>u    Undoツリーをトグル (undotree)",
   "n   <leader>?    このキーバインド一覧を表示",
 }
 
