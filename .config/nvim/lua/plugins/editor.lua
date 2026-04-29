@@ -9,7 +9,7 @@ return {
   { "tpope/vim-commentary", keys = { "gc", "gcc" } },
 
   -- ナビゲーションマッピング
-  { "tpope/vim-unimpaired", event = "BufRead" },
+  { "tpope/vim-unimpaired", event = "VeryLazy" },
 
   -- カーソル下の識別子をハイライト
   {
