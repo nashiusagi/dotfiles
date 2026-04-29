@@ -80,7 +80,7 @@
 | Python | pyright |
 | Go | gopls |
 
-追加は `lsp.lua` の `ensure_installed` と `vim.lsp.config` に記述する。
+追加は `lsp.lua` の `vim.lsp.config` と `vim.lsp.enable` に記述する。サーバーは Mason でインストールする。
 
 ## Neovim設定ファイル構成
 

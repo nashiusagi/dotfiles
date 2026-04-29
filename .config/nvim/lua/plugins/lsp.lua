@@ -60,37 +60,49 @@ return {
     end,
   },
 
-  -- LSP設定（Neovim 0.11+ native API）
+  -- LSP設定（native LSP + mason）
   {
     "hrsh7th/cmp-nvim-lsp",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local bin = vim.fn.stdpath("data") .. "/mason/bin/"
 
-      local mason_bin = vim.fn.stdpath("data") .. "/mason/bin/"
-
-      -- Python（coc-settings.json の設定を移植）
-      vim.lsp.config("pyright", {
-        cmd = { mason_bin .. "pyright-langserver", "--stdio" },
-        filetypes = { "python" },
-        root_markers = { "pyproject.toml", "setup.py", "setup.cfg", ".git" },
-        capabilities = capabilities,
-        settings = {
-          python = {
-            analysis = {
-              autoImportCompletions = true,
-              typeCheckingMode = "basic",
+      -- mason経由でインストールしたサーバーをネイティブLSPで起動するヘルパー
+      -- 新しいサーバーを追加するときは servers テーブルに追加するだけでよい
+      local servers = {
+        {
+          name = "pyright",
+          cmd = { bin .. "pyright-langserver", "--stdio" },
+          filetypes = { "python" },
+          root_markers = { "pyproject.toml", "setup.py", "setup.cfg", ".git" },
+          settings = {
+            python = {
+              analysis = {
+                autoImportCompletions = true,
+                typeCheckingMode = "basic",
+              },
             },
-          },
-          pyright = {
-            inlayHints = {
-              variableTypes = false,
-              functionReturnTypes = false,
+            pyright = {
+              inlayHints = { variableTypes = false, functionReturnTypes = false },
             },
           },
         },
-      })
-      vim.lsp.enable("pyright")
+        {
+          name = "gopls",
+          cmd = { bin .. "gopls" },
+          filetypes = { "go", "gomod", "gowork", "gotmpl" },
+          root_markers = { "go.work", "go.mod", ".git" },
+        },
+      }
+
+      for _, server in ipairs(servers) do
+        local cfg = vim.tbl_extend("force", { capabilities = capabilities }, server)
+        local name = cfg.name
+        cfg.name = nil
+        vim.lsp.config(name, cfg)
+        vim.lsp.enable(name)
+      end
 
       -- カーソル停止時に識別子をハイライト
       vim.api.nvim_create_autocmd("LspAttach", {
