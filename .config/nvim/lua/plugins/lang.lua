@@ -1,10 +1,11 @@
 return {
   -- LaTeX
-  { "lervag/vimtex", ft = "tex" },
+  { "lervag/vimtex", commit = "0f42a5130432d4af2e6fd21fb93a76915ff1f090", ft = "tex" },
 
   -- Markdownプレビュー
   {
     "iamcco/markdown-preview.nvim",
+    commit = "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee",
     cmd = { "MarkdownPreview", "MarkdownPreviewStop" },
     ft = "markdown",
     build = "cd app && npm install",
@@ -18,6 +19,7 @@ return {
   -- フローティングターミナル
   {
     "voldikss/vim-floaterm",
+    commit = "0ab5eb8135dc884bc543a819ac7033c15e72a76b",
     cmd = { "FloatermNew", "FloatermToggle" },
     keys = {
       { "<leader>tt", "<cmd>FloatermToggle<CR>", mode = { "n", "t" }, silent = true },
@@ -33,6 +35,7 @@ return {
   -- テストランナー
   {
     "vim-test/vim-test",
+    commit = "bc0e94059de40641d163516a83c63bc45c716acf",
     cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast" },
     keys = {
       { "<leader>tn", ":TestNearest<CR>", silent = true },

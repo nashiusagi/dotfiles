@@ -1,10 +1,11 @@
 return {
   -- Git操作
-  { "tpope/vim-fugitive", cmd = { "Git", "G" } },
+  { "tpope/vim-fugitive", commit = "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0", cmd = { "Git", "G" } },
 
   -- Git差分をガターに表示（vim-gitgutter → gitsigns.nvim）
   {
     "lewis6991/gitsigns.nvim",
+    commit = "6d808f99bd63303646794406e270bd553ad7792e",
     event = "BufRead",
     opts = {
       signs = {
