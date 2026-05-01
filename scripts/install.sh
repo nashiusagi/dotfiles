@@ -44,5 +44,5 @@ else
   echo "    https://rustup.rs/"
 fi
 # lazy.nvim プラグインをヘッドレスでインストール
-nvim --headless "+Lazy! sync" +qa
+nvim --headless "+Lazy! restore" +qa
 vim_deps

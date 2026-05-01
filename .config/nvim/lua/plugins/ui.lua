@@ -1,10 +1,11 @@
 return {
   -- カラースキーム
-  { "tomasr/molokai", lazy = false, priority = 1000 },
+  { "tomasr/molokai", commit = "c67bdfcdb31415aa0ade7f8c003261700a885476", lazy = false, priority = 1000 },
 
   -- ステータスライン（vim-airline → lualine）
   {
     "nvim-lualine/lualine.nvim",
+    commit = "131a558e13f9f28b15cd235557150ccb23f89286",
     event = "VimEnter",
     opts = { theme = "auto" },
   },
@@ -12,6 +13,7 @@ return {
   -- インデントガイド（indentLine → indent-blankline）
   {
     "lukas-reineke/indent-blankline.nvim",
+    commit = "d28a3f70721c79e3c5f6693057ae929f3d9c0a03",
     main = "ibl",
     event = "BufRead",
     opts = {
@@ -22,6 +24,7 @@ return {
   -- キーバインド一覧
   {
     "liuchengxu/vim-which-key",
+    commit = "72a4267b46a76f541b3e9500a7503575575d4f57",
     event = "VeryLazy",
     config = function()
       vim.g.which_key_map = {
@@ -50,6 +53,7 @@ return {
   -- ヤンクのハイライト（300ms）
   {
     "machakann/vim-highlightedyank",
+    commit = "285a61425e79742997bbde76a91be6189bc988fb",
     event = "VeryLazy",
     init = function()
       vim.g.highlightedyank_highlight_duration = 300
@@ -57,5 +61,5 @@ return {
   },
 
   -- CSSカラープレビュー
-  { "ap/vim-css-color", event = "VeryLazy" },
+  { "ap/vim-css-color", commit = "14fd934cdd9ca1ac0e53511094e612eb9bace373", event = "VeryLazy" },
 }
