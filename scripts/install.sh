@@ -3,6 +3,11 @@ set -ue
 
 ln -s ~/dotfiles/.config/nvim ~/.config/nvim
 
+# WezTerm IME autostart (GNOME セッション開始時に自動で ibus Flatpak override を適用)
+mkdir -p ~/.config/autostart
+ln -sf ~/dotfiles/.config/autostart/setup-wezterm-ime.desktop ~/.config/autostart/setup-wezterm-ime.desktop
+bash ~/dotfiles/scripts/setup_wezterm_ime.sh
+
 source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/vim_deps.sh
 source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/git.sh
 

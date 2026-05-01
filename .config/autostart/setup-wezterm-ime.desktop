@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Setup WezTerm IME
+Comment=Set ibus environment variables for WezTerm Flatpak
+Exec=bash -c 'exec "$HOME/dotfiles/scripts/setup_wezterm_ime.sh"'
+NoDisplay=true
+X-GNOME-Autostart-enabled=true
