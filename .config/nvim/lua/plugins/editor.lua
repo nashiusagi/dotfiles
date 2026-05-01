@@ -58,5 +58,10 @@ return {
   },
 
   -- コードフォーマット
-  { "prettier/vim-prettier", commit = "7dbdbb12c50a9f4ba72390cce2846248e4368fd0", cmd = "Prettier", ft = { "javascript", "typescript", "css", "html", "json", "markdown" } },
+  {
+    "prettier/vim-prettier",
+    commit = "7dbdbb12c50a9f4ba72390cce2846248e4368fd0",
+    cmd = "Prettier",
+    ft = { "javascript", "typescript", "css", "html", "json", "markdown" },
+  },
 }
