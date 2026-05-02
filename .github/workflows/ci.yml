@@ -19,7 +19,7 @@ jobs:
         run: sudo apt-get install -y luarocks && sudo luarocks install luacheck
 
       - name: Run luacheck on Neovim config
-        run: luacheck .config/nvim/lua/ --globals vim --no-unused-args
+        run: luacheck nvim/lua/ --globals vim --no-unused-args
 
   tmux-lint-check:
     runs-on: ubuntu-24.04
@@ -63,10 +63,10 @@ jobs:
           # 構文チェック対象のファイル
           zsh_files=(
             ".zshrc"
-            ".zsh/zshrc/alias.zsh"
-            ".zsh/zshrc/base.zsh"
-            ".zsh/zshrc/option.zsh"
-            ".zsh/zshrc/plugin.zsh"
+            "zsh/zshrc/alias.zsh"
+            "zsh/zshrc/base.zsh"
+            "zsh/zshrc/option.zsh"
+            "zsh/zshrc/plugin.zsh"
             ".p10k.zsh"
           )
 
