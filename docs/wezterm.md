@@ -9,6 +9,8 @@
 | **IME** | ibus 対応（`use_ime = true`） |
 | **フォントサイズ** | 13 |
 | **フォント** | MesloLGS NF（fallback: Noto Sans Mono CJK JP, Noto Color Emoji） |
+| **ペイン分割線** | cyan（`#00ffff`） |
+| **非アクティブペイン** | 彩度0.5・明度0.6で暗く表示 |
 
 ## フォント
 
