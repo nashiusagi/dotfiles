@@ -14,7 +14,7 @@
 
 ## フォント
 
-`MesloLGS NF` を使用している。`scripts/install.sh` によって `~/.local/share/fonts/` にインストールされる。
+`MesloLGS NF` を使用している。フォントファイルは `fonts/` に同梱されており、`scripts/install.sh` によって `~/.local/share/fonts/` にコピーされる。
 
 ## キーバインド
 
