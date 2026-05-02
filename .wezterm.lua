@@ -25,6 +25,33 @@ local function set_battery_info()
     end)
 end
 
+-- Claude Code応答通知: bellが来たタブIDを記録する
+local bell_tabs = {}
+
+wezterm.on('bell', function(window, pane)
+    local tab = pane:tab()
+    if tab then
+        bell_tabs[tab:tab_id()] = true
+        window:active_tab():invalidate()
+    end
+end)
+
+-- アクティブになったらマーカーをクリアする
+wezterm.on('focus-changed', function(window, pane)
+    local tab = window:active_tab()
+    if tab then
+        bell_tabs[tab:tab_id()] = nil
+    end
+end)
+
+wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
+    local title = tab.active_pane.title
+    if bell_tabs[tab.tab_id] then
+        return '● ' .. title
+    end
+    return title
+end)
+
 
 return {
     ----------------------------------------------------
