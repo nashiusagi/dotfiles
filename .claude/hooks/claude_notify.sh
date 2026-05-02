@@ -1,2 +1,2 @@
 #!/bin/bash
-printf '\a'
+printf '\a' > /dev/tty 2>/dev/null

@@ -85,7 +85,7 @@
 ## Neovim設定ファイル構成
 
 ```
-~/.config/nvim/  →  ~/dotfiles/.config/nvim/
+~/.config/nvim/  →  ~/dotfiles/nvim/
 ├── init.lua                  # エントリーポイント（lazy.nvim bootstrap）
 └── lua/
     ├── config/

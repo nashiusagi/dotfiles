@@ -1,7 +1,11 @@
 #!/bin/bash
 set -ue
 
-ln -s ~/dotfiles/.config/nvim ~/.config/nvim
+ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/.wezterm.lua ~/.wezterm.lua
+ln -sf ~/dotfiles/.zshenv ~/.zshenv
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/nvim ~/.config/nvim
 
 # WezTerm IME autostart (GNOME セッション開始時に自動で ibus Flatpak override を適用)
 mkdir -p ~/.config/autostart
@@ -20,10 +24,7 @@ sudo snap install nvim --classic
 # MesloLGS NF (powerlevel10k推奨フォント)
 FONT_DIR="$HOME/.local/share/fonts"
 mkdir -p "$FONT_DIR"
-MESLOLGS_BASE="https://github.com/romkatv/powerlevel10k-media/raw/master"
-for font in "MesloLGS NF Regular" "MesloLGS NF Bold" "MesloLGS NF Italic" "MesloLGS NF Bold Italic"; do
-  curl -fsSL "${MESLOLGS_BASE}/${font// /%20}.ttf" -o "${FONT_DIR}/${font}.ttf"
-done
+cp ~/dotfiles/fonts/*.ttf "$FONT_DIR/"
 fc-cache -f "$FONT_DIR"
 
 # lazygit — GitHubリリースからバイナリをインストール
