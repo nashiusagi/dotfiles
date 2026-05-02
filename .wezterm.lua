@@ -1,5 +1,5 @@
 local wezterm = require 'wezterm'
-package.path = package.path..';'..os.getenv("HOME")..'/dotfiles/.wezterm/?.lua'
+package.path = package.path..';'..os.getenv("HOME")..'/dotfiles/wezterm/?.lua'
 local keybinds = require 'keybinds'
 local act=wezterm.action
 

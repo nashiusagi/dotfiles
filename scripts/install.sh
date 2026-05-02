@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ue
 
-ln -s ~/dotfiles/.config/nvim ~/.config/nvim
+ln -s ~/dotfiles/nvim ~/.config/nvim
 
 # WezTerm IME autostart (GNOME セッション開始時に自動で ibus Flatpak override を適用)
 mkdir -p ~/.config/autostart
