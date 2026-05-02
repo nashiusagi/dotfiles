@@ -30,6 +30,7 @@ M.tmux_keybinds = {
     { key = "9", mods = "ALT", action = act({ ActivateTab = 8 }) },
     { key = "-", mods = "ALT", action = act({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
     { key = "|", mods = "ALT", action = act({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+    { key = "g", mods = "ALT", action = act.SpawnCommandInNewTab({ args = { "lazygit" } }) },
 }
 
 M.default_keybinds = {
