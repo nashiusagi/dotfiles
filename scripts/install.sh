@@ -14,7 +14,7 @@ source $(dirname "${BASH_SOURCE[0]:-$0}")/lib/git.sh
 install_delta
 setup_gitconfig
 
-sudo apt install -y eza fd-find nodejs npm groff fonts-noto-cjk fontconfig ripgrep
+sudo apt install -y eza fd-find nodejs npm groff fonts-noto-cjk fontconfig ripgrep jq
 sudo snap install nvim --classic
 
 # MesloLGS NF (powerlevel10k推奨フォント)
@@ -51,3 +51,12 @@ fi
 # lazy.nvim プラグインをヘッドレスでインストール
 nvim --headless "+Lazy! restore" +qa
 vim_deps
+
+# Claude Code hooks設定を~/.claude/settings.jsonにマージ
+mkdir -p ~/.claude
+if [ -f ~/.claude/settings.json ]; then
+    jq -s '.[0] * .[1]' ~/.claude/settings.json ~/dotfiles/.claude/hooks.json > /tmp/claude_settings_merged.json
+    mv /tmp/claude_settings_merged.json ~/.claude/settings.json
+else
+    cp ~/dotfiles/.claude/hooks.json ~/.claude/settings.json
+fi
