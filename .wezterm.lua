@@ -47,7 +47,11 @@ end)
 wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
     local title = tab.active_pane.title
     if bell_tabs[tab.tab_id] then
-        return '● ' .. title
+        return {
+            { Background = { Color = '#f5a623' } },
+            { Foreground = { Color = '#1a1a1a' } },
+            { Text = ' ● ' .. title .. ' ' },
+        }
     end
     return title
 end)
