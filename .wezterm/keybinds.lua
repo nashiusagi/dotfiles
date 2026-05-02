@@ -34,7 +34,6 @@ M.tmux_keybinds = {
 
 M.default_keybinds = {
     { key='C', mods='CTRL', action=act.CopyTo 'Clipboard' },
-    { key='P', mods='CTRL', action=act.PasteFrom 'Clipboard' },
     { key='F9', mods='ALT', action=act.ShowTabNavigator },
 }
 
