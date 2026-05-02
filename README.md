@@ -39,7 +39,7 @@ dotfiles/
 ├── wezterm/
 │   ├── keybinds.lua              # キーバインド設定
 │   └── utils.lua                 # ユーティリティ関数
-├── .fonts/                       # カスタムフォント
+├── fonts/                        # カスタムフォント（MesloLGS NF）
 ├── .gitignore
 ├── docs/                         # 各ツールのドキュメント
 │   ├── git.md
