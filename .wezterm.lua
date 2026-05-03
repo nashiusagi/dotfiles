@@ -91,4 +91,12 @@ return {
     font = make_font(),
     font_size = 13,
     line_height = 1.0,
+
+    ----------------------------------------------------
+    -- session
+    ----------------------------------------------------
+    unix_domains = {
+        { name = "unix" },
+    },
+    default_gui_startup_args = { "connect", "unix" },
 }

@@ -11,10 +11,17 @@
 | **フォント** | MesloLGS NF（fallback: Noto Sans Mono CJK JP, Noto Color Emoji） |
 | **ペイン分割線** | cyan（`#00ffff`） |
 | **非アクティブペイン** | 彩度0.5・明度0.6で暗く表示 |
+| **セッション永続化** | unix_domain によりウィンドウを閉じてもセッションが継続 |
 
 ## フォント
 
 `MesloLGS NF` を使用している。フォントファイルは `fonts/` に同梱されており、`scripts/install.sh` によって `~/.local/share/fonts/` にコピーされる。
+
+## セッション永続化
+
+`unix_domain` を使ってWezTermをデーモンとして常駐させる。ウィンドウを閉じてもセッションが生き続け、再起動後も `wezterm connect unix` で既存セッションにアタッチできる。
+
+`default_gui_startup_args = { "connect", "unix" }` により、WezTerm起動時に自動的にunixドメインへ接続する。
 
 ## キーバインド
 
