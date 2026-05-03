@@ -34,6 +34,7 @@ M.tmux_keybinds = {
 M.default_keybinds = {
     { key='C', mods='CTRL', action=act.CopyTo 'Clipboard' },
     { key='F9', mods='ALT', action=act.ShowTabNavigator },
+    { key = "f", mods = "ALT", action = act.Search({ CaseInSensitiveString = "" }) },
 }
 
 function M.create_keybinds()
