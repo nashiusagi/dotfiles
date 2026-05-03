@@ -1,10 +1,21 @@
 local wezterm = require 'wezterm'
 package.path = package.path..';'..os.getenv("HOME")..'/dotfiles/wezterm/?.lua'
 local keybinds = require 'keybinds'
+local utils = require 'utils'
 local act = wezterm.action
+local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 
 -- Claude Code応答通知の状態
 local bell_tabs = {}
+
+-- 15分ごとに自動保存
+resurrect.periodic_save()
+
+-- PC再起動後の自動復元
+wezterm.on("gui-startup", function(cmd)
+    local _, _, window = wezterm.mux.spawn_window(cmd or {})
+    resurrect.resurrect(window)
+end)
 
 local function make_font()
     return wezterm.font_with_fallback({
@@ -71,7 +82,35 @@ return {
     ----------------------------------------------------
     -- keys
     ----------------------------------------------------
-    keys = keybinds.create_keybinds(),
+    keys = utils.merge_lists(keybinds.create_keybinds(), {
+        {
+            key = "s", mods = "ALT",
+            action = wezterm.action_callback(function(win, pane)
+                resurrect.save_state(resurrect.workspace_state.get_workspace_state())
+            end),
+        },
+        {
+            key = "r", mods = "ALT",
+            action = wezterm.action_callback(function(win, pane)
+                resurrect.fuzzy_load(win, function(id, label)
+                    local state_type = string.match(id, "^([^/]+)")
+                    id = string.match(id, "([^/]+)$")
+                    id = string.gsub(id, "%.json$", "")
+                    local state = resurrect.load_state(id, state_type)
+                    if state_type == "workspace" then
+                        resurrect.workspace_state.restore_workspace(state, {
+                            relative_mux_window_index = 0,
+                            restore_text = true,
+                        })
+                    elseif state_type == "window" then
+                        resurrect.window_state.restore_window(pane:window(), state)
+                    elseif state_type == "tab" then
+                        resurrect.tab_state.restore_tab(pane:tab(), state)
+                    end
+                end)
+            end),
+        },
+    }),
     mouse_bindings = keybinds.mouse_bindings,
 
     ----------------------------------------------------
