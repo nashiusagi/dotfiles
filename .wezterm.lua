@@ -96,6 +96,18 @@ return {
             end),
         },
         {
+            key = "t", mods = "ALT",
+            action = wezterm.action_callback(function(win, pane)
+                local overrides = win:get_config_overrides() or {}
+                if overrides.window_background_opacity == 1.0 then
+                    overrides.window_background_opacity = 0.85
+                else
+                    overrides.window_background_opacity = 1.0
+                end
+                win:set_config_overrides(overrides)
+            end),
+        },
+        {
             key = "r", mods = "ALT",
             action = wezterm.action_callback(function(win, pane)
                 resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
@@ -129,6 +141,11 @@ return {
         saturation = 0.7,
         brightness = 0.8,
     },
+
+    ----------------------------------------------------
+    -- appearance
+    ----------------------------------------------------
+    window_background_opacity = 0.85,
 
     ----------------------------------------------------
     -- fonts
