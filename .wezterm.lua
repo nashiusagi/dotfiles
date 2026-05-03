@@ -11,6 +11,11 @@ local bell_tabs = {}
 -- 15分ごとに自動保存
 resurrect.state_manager.periodic_save()
 
+-- 自動保存のたびにcurrent_stateも更新（gui-startupでの自動復元に必要）
+wezterm.on("resurrect.state_manager.periodic_save.finished", function()
+    resurrect.state_manager.write_current_state(wezterm.mux.get_active_workspace(), "workspace")
+end)
+
 -- PC再起動後の自動復元
 wezterm.on("gui-startup", function(cmd)
     resurrect.state_manager.resurrect_on_gui_startup()
