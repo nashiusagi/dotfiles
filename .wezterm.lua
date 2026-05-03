@@ -9,12 +9,11 @@ local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.
 local bell_tabs = {}
 
 -- 15分ごとに自動保存
-resurrect.periodic_save()
+resurrect.state_manager.periodic_save()
 
 -- PC再起動後の自動復元
 wezterm.on("gui-startup", function(cmd)
-    local _, _, window = wezterm.mux.spawn_window(cmd or {})
-    resurrect.resurrect(window)
+    resurrect.state_manager.resurrect_on_gui_startup()
 end)
 
 local function make_font()
@@ -86,17 +85,19 @@ return {
         {
             key = "s", mods = "ALT",
             action = wezterm.action_callback(function(win, pane)
-                resurrect.save_state(resurrect.workspace_state.get_workspace_state())
+                local state = resurrect.workspace_state.get_workspace_state()
+                resurrect.state_manager.save_state(state)
+                resurrect.state_manager.write_current_state(wezterm.mux.get_active_workspace(), "workspace")
             end),
         },
         {
             key = "r", mods = "ALT",
             action = wezterm.action_callback(function(win, pane)
-                resurrect.fuzzy_load(win, function(id, label)
+                resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
                     local state_type = string.match(id, "^([^/]+)")
                     id = string.match(id, "([^/]+)$")
                     id = string.gsub(id, "%.json$", "")
-                    local state = resurrect.load_state(id, state_type)
+                    local state = resurrect.state_manager.load_state(id, state_type)
                     if state_type == "workspace" then
                         resurrect.workspace_state.restore_workspace(state, {
                             relative_mux_window_index = 0,
