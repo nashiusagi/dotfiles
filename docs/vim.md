@@ -17,6 +17,7 @@
 | **ファジーファインダー** | fzf, fzf.vim |
 | **LaTeX** | vimtex |
 | **コードフォーマット** | vim-prettier |
+| **%マッチング強化** | vim-matchup（`%`でif/end, do/endなどの構文キーワードにもジャンプ） |
 | **括弧・クォート自動補完** | auto-pairs |
 | **HTMLタグ補完** | vim-closetag |
 | **CSSカラープレビュー** | vim-css-color |
