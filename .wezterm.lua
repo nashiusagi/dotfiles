@@ -82,6 +82,7 @@ return {
     hide_tab_bar_if_only_one_tab = false,
     exit_behavior = 'Close',
     enable_scroll_bar = true,
+    scrollback_lines = 10000,
 
     ----------------------------------------------------
     -- keys
