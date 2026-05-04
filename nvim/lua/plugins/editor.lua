@@ -57,6 +57,9 @@ return {
     end,
   },
 
+  -- %マッチング強化（if/end, do/end などの構文キーワードにも対応）
+  { "andymass/vim-matchup", event = "BufRead" },
+
   -- コードフォーマット
   {
     "prettier/vim-prettier",
