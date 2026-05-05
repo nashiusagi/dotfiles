@@ -29,6 +29,19 @@ M.tmux_keybinds = {
     { key = "8", mods = "ALT", action = act({ ActivateTab = 7 }) },
     { key = "9", mods = "ALT", action = act({ ActivateTab = 8 }) },
     { key = "g", mods = "ALT", action = act.SpawnCommandInNewTab({ args = { "lazygit" } }) },
+    -- ペイン分割
+    { key = "\\", mods = "ALT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    { key = "-",  mods = "ALT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+    -- ペイン移動
+    { key = "LeftArrow",  mods = "ALT", action = act.ActivatePaneDirection("Left") },
+    { key = "RightArrow", mods = "ALT", action = act.ActivatePaneDirection("Right") },
+    { key = "UpArrow",    mods = "ALT", action = act.ActivatePaneDirection("Up") },
+    { key = "DownArrow",  mods = "ALT", action = act.ActivatePaneDirection("Down") },
+    -- ペインサイズ変更
+    { key = "LeftArrow",  mods = "ALT|CTRL", action = act.AdjustPaneSize({ "Left", 5 }) },
+    { key = "RightArrow", mods = "ALT|CTRL", action = act.AdjustPaneSize({ "Right", 5 }) },
+    { key = "UpArrow",    mods = "ALT|CTRL", action = act.AdjustPaneSize({ "Up", 5 }) },
+    { key = "DownArrow",  mods = "ALT|CTRL", action = act.AdjustPaneSize({ "Down", 5 }) },
 }
 
 M.default_keybinds = {
