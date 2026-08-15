@@ -3,23 +3,9 @@ package.path = package.path..';'..os.getenv("HOME")..'/dotfiles/wezterm/?.lua'
 local keybinds = require 'keybinds'
 local utils = require 'utils'
 local act = wezterm.action
-local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
 
 -- Claude Code応答通知の状態
 local bell_tabs = {}
-
--- 15分ごとに自動保存
-resurrect.state_manager.periodic_save()
-
--- 自動保存のたびにcurrent_stateも更新（gui-startupでの自動復元に必要）
-wezterm.on("resurrect.state_manager.periodic_save.finished", function()
-    resurrect.state_manager.write_current_state(wezterm.mux.get_active_workspace(), "workspace")
-end)
-
--- PC再起動後の自動復元
-wezterm.on("gui-startup", function(cmd)
-    resurrect.state_manager.resurrect_on_gui_startup()
-end)
 
 local function make_font()
     return wezterm.font_with_fallback({
@@ -89,14 +75,6 @@ return {
     ----------------------------------------------------
     keys = utils.merge_lists(keybinds.create_keybinds(), {
         {
-            key = "s", mods = "ALT",
-            action = wezterm.action_callback(function(win, pane)
-                local state = resurrect.workspace_state.get_workspace_state()
-                resurrect.state_manager.save_state(state)
-                resurrect.state_manager.write_current_state(wezterm.mux.get_active_workspace(), "workspace")
-            end),
-        },
-        {
             key = "t", mods = "ALT",
             action = wezterm.action_callback(function(win, pane)
                 local overrides = win:get_config_overrides() or {}
@@ -106,27 +84,6 @@ return {
                     overrides.window_background_opacity = 1.0
                 end
                 win:set_config_overrides(overrides)
-            end),
-        },
-        {
-            key = "r", mods = "ALT",
-            action = wezterm.action_callback(function(win, pane)
-                resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
-                    local state_type = string.match(id, "^([^/]+)")
-                    id = string.match(id, "([^/]+)$")
-                    id = string.gsub(id, "%.json$", "")
-                    local state = resurrect.state_manager.load_state(id, state_type)
-                    if state_type == "workspace" then
-                        resurrect.workspace_state.restore_workspace(state, {
-                            relative_mux_window_index = 0,
-                            restore_text = true,
-                        })
-                    elseif state_type == "window" then
-                        resurrect.window_state.restore_window(pane:window(), state)
-                    elseif state_type == "tab" then
-                        resurrect.tab_state.restore_tab(pane:tab(), state)
-                    end
-                end)
             end),
         },
     }),
