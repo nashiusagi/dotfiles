@@ -2,6 +2,7 @@ local M = {}
 local wezterm  = require "wezterm"
 local act = wezterm.action
 local utils = require "utils"
+local cheatsheet = require "cheatsheet"
 
 ---------------------------------------------------------------
 --- keybinds
@@ -48,6 +49,9 @@ M.default_keybinds = {
     { key='C', mods='CTRL', action=act.CopyTo 'Clipboard' },
     { key='F9', mods='ALT', action=act.ShowTabNavigator },
     { key = "f", mods = "ALT", action = act.Search({ CaseInSensitiveString = "" }) },
+    -- キーバインド一覧を新規タブに表示
+    { key = "?", mods = "ALT|SHIFT", action = cheatsheet.action() },
+    { key = "?", mods = "ALT", action = cheatsheet.action() },
 }
 
 function M.create_keybinds()

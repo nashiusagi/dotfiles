@@ -1,2 +1,3 @@
 #!/bin/bash
-printf '\a' > /dev/tty 2>/dev/null
+{ printf '\a' > /dev/tty; } 2>/dev/null
+exit 0
