@@ -2,7 +2,11 @@ local wezterm = require 'wezterm'
 package.path = package.path..';'..os.getenv("HOME")..'/dotfiles/wezterm/?.lua'
 local keybinds = require 'keybinds'
 local utils = require 'utils'
+local cheatsheet = require 'cheatsheet'
 local act = wezterm.action
+
+-- 設定読み込みのたびにチートシートを書き出す (ALT+? で表示)
+cheatsheet.dump()
 
 -- Claude Code応答通知の状態
 local bell_tabs = {}
